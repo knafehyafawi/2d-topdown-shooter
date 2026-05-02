@@ -13,7 +13,6 @@ config_version=5
 config/name="2d Topdown Shooter"
 run/main_scene="uid://3kf5y50b7pns"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
 
 [input]
 
