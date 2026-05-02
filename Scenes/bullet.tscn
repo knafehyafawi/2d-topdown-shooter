@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cjb58iu05hb21"]
+
+[ext_resource type="Texture2D" uid="uid://bcq8h3gpt3hor" path="res://Assets/Player.png" id="1_xjght"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oduel"]
+size = Vector2(16, 16)
+
+[node name="Bullet" type="RigidBody2D" unique_id=1450233397]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1074632270]
+scale = Vector2(0.525, 0.175)
+shape = SubResource("RectangleShape2D_oduel")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=375266490]
+scale = Vector2(0.5, 0.15)
+texture = ExtResource("1_xjght")
