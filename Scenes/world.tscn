@@ -1,30 +1,7 @@
 [gd_scene format=3 uid="uid://3kf5y50b7pns"]
 
-[ext_resource type="Texture2D" uid="uid://bcq8h3gpt3hor" path="res://Assets/Player.png" id="1_a02cp"]
-[ext_resource type="Script" uid="uid://8euni44iermg" path="res://Scripts/player.gd" id="1_go701"]
-[ext_resource type="PackedScene" uid="uid://cjb58iu05hb21" path="res://Scenes/bullet.tscn" id="3_5a7ea"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_go701"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a02cp"]
-size = Vector2(18, 18)
+[ext_resource type="PackedScene" uid="uid://b8jh1bspkjp4r" path="res://Scenes/player.tscn" id="1_a02cp"]
 
 [node name="World" type="Node2D" unique_id=1237656125]
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=884577240]
-script = ExtResource("1_go701")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1969960452]
-shape = SubResource("RectangleShape2D_go701")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=630181833]
-texture = ExtResource("1_a02cp")
-
-[node name="Area2D" type="Area2D" parent="Player" unique_id=1164933628]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D" unique_id=951943198]
-shape = SubResource("RectangleShape2D_a02cp")
-
-[node name="Bullet" parent="." unique_id=1450233397 instance=ExtResource("3_5a7ea")]
-position = Vector2(16, 0)
+[node name="Player" parent="." unique_id=1834170330 instance=ExtResource("1_a02cp")]

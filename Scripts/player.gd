@@ -1,35 +1,39 @@
 extends CharacterBody2D
 
-
 const SPEED = 500.0
-var input_dir = Vector2()
 const BULLET_SPEED = 2000
+var input_dir = Vector2()
 
-@onready var bullet: RigidBody2D = $"../Bullet"
-
-
+@onready var bullet_scene: PackedScene = preload("res://Scenes/bullet.tscn")
 
 func _process(delta: float) -> void:
-	input_dir = Input.get_vector("left", "right", "up", "down")
-	
-func player_movement()->void:
+		input_dir = Input.get_vector("left", "right", "up", "down")
+		queue_redraw()
+
+func _draw():
+	draw_circle(Vector2.ZERO, 3, Color.RED)  # mark player origin
+	draw_circle(Vector2(20, 0), 3, Color.GREEN)  # mark spawn point in local space
+
+func player_movement() -> void:
 	if input_dir:
 		velocity = input_dir.normalized() * SPEED
 	else:
-		velocity.x = move_toward(velocity.x,0,SPEED)
-		velocity.y = move_toward(velocity.y,0,SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
-	# Aim
 	look_at(get_global_mouse_position())
-	
 
 func fire():
-	var bullet_instance = bullet.instance()
+	#debug
+	print("Player global pos: ", global_position)
+	print("Spawn pos: ", global_position + Vector2(20, 0).rotated(rotation))
+
+	var bullet_instance = bullet_scene.instantiate()
+	get_tree().get_root().call_deferred("add_child", bullet_instance)
 	bullet_instance.position = get_global_position()
-	bullet_instance.rotation_deg = rotation_degrees
-	bullet_instance.apply_impulse(Vector2(),Vector2(BULLET_SPEED,0).rotated(rotation))
+	bullet_instance.rotation = rotation
+	bullet_instance.apply_impulse(Vector2(BULLET_SPEED, 0).rotated(rotation))
 	
-	get_tree().get_root().call_deferred("add_child",bullet_instance)
 
 func _physics_process(delta: float) -> void:
 	player_movement()

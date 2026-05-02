@@ -1,16 +1,21 @@
 [gd_scene format=3 uid="uid://cjb58iu05hb21"]
 
-[ext_resource type="Texture2D" uid="uid://bcq8h3gpt3hor" path="res://Assets/Player.png" id="1_xjght"]
+[ext_resource type="Script" uid="uid://g3tot7xglcip" path="res://Scripts/bullet.gd" id="1_oduel"]
+[ext_resource type="Texture2D" uid="uid://bk730bwouccjp" path="res://Assets/Bullet.png" id="1_xjght"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oduel"]
-size = Vector2(16, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjght"]
+size = Vector2(10, 4)
 
 [node name="Bullet" type="RigidBody2D" unique_id=1450233397]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1074632270]
-scale = Vector2(0.525, 0.175)
-shape = SubResource("RectangleShape2D_oduel")
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_oduel")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=375266490]
-scale = Vector2(0.5, 0.15)
+position = Vector2(-5.9604645e-08, -1.4901161e-07)
 texture = ExtResource("1_xjght")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2040179358]
+shape = SubResource("RectangleShape2D_xjght")
