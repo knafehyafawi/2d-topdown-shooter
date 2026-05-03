@@ -12,5 +12,8 @@ func _physics_process(delta: float) -> void:
 	var player = get_parent().get_node("Player")
 	
 	position += (player.position-position)/50
+	
+	#velocity = player.position.normalized() * motion
+	
 	look_at(player.position)
 	move_and_slide()
