@@ -7,7 +7,7 @@
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a02cp"]
-size = Vector2(14, 14)
+size = Vector2(16, 16)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1834170330]
 script = ExtResource("1_1f0kj")
