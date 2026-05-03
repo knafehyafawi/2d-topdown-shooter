@@ -1,18 +1,18 @@
 extends CharacterBody2D
 
 const SPEED = 500.0
-const BULLET_SPEED = 2000
+const BULLET_SPEED = 1000
 var input_dir = Vector2()
 
 @onready var bullet_scene: PackedScene = preload("res://Scenes/bullet.tscn")
 
 func _process(delta: float) -> void:
 		input_dir = Input.get_vector("left", "right", "up", "down")
-		queue_redraw()
+		# queue_redraw()
 
-func _draw():
-	draw_circle(Vector2.ZERO, 3, Color.RED)  # mark player origin
-	draw_circle(Vector2(20, 0), 3, Color.GREEN)  # mark spawn point in local space
+#func _draw(): # for debugging
+	#draw_circle(Vector2.ZERO, 3, Color.RED)  # mark player origin
+	#draw_circle(Vector2(20, 0), 3, Color.GREEN)  # mark spawn point in local space
 
 func player_movement() -> void:
 	if input_dir:
@@ -41,3 +41,10 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("fire"):
 		fire()
+
+func kill():
+	get_tree().reload_current_scene()
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if "Enemy" in body.name:
+		kill()
