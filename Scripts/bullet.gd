@@ -5,3 +5,6 @@ func _ready():
 	lock_rotation = true
 	freeze = false  # true only when debugging
 	# print("Bullet spawned at: ", global_position)
+
+# TO DO:
+# if bullet hits enemy, delete bullet

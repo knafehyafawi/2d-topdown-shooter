@@ -17,3 +17,8 @@ func _physics_process(delta: float) -> void:
 	
 	look_at(player.position)
 	move_and_slide()
+
+# TO DO:
+# if bullet hits enemy, enemy take damage
+# enemy has 5 max HP. bullet does 1 dmg
+# also fix enemy spawn pos

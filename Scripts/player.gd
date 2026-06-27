@@ -10,6 +10,11 @@ func _process(delta: float) -> void:
 		input_dir = Input.get_vector("left", "right", "up", "down")
 		# queue_redraw()
 
+
+# TO DO:
+# fix player spawn pos
+
+
 #func _draw(): # for debugging
 	#draw_circle(Vector2.ZERO, 3, Color.RED)  # mark player origin
 	#draw_circle(Vector2(20, 0), 3, Color.GREEN)  # mark spawn point in local space
