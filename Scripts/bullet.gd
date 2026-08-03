@@ -5,3 +5,8 @@ func _ready():
 	lock_rotation = true
 	freeze = false  # true only when debugging
 	# print("Bullet spawned at: ", global_position)
+
+
+# collision detection in case collision with wall happens
+func _on_body_entered(body: Node) -> void:
+	queue_free()
