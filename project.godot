@@ -49,3 +49,4 @@ fire={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.3580069, 0.098277666, 0.09822168, 1)

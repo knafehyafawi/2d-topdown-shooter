@@ -21,9 +21,11 @@ func take_damage(amount: int) -> void:
 	health -= amount
 	if health <= 0:
 		queue_free()
+		print("Enemy dead")
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("bullets"):
 		body.queue_free()
 		take_damage(1)
+		print("Enemy health -1")

@@ -14,8 +14,8 @@ func _process(delta: float) -> void:
 # TO DO:
 # fix player spawn pos
 
-
-#func _draw(): # for debugging
+################ debug, do not delete ###################
+#func _draw():
 	#draw_circle(Vector2.ZERO, 3, Color.RED)  # mark player origin
 	#draw_circle(Vector2(20, 0), 3, Color.GREEN)  # mark spawn point in local space
 
@@ -29,9 +29,9 @@ func player_movement() -> void:
 	look_at(get_global_mouse_position())
 
 func fire():
-	#debug
-	print("Player global pos: ", global_position)
-	print("Spawn pos: ", global_position + Vector2(20, 0).rotated(rotation))
+	################ debug, do not delete ###################
+	#print("Player global pos: ", global_position)
+	#print("Spawn pos: ", global_position + Vector2(20, 0).rotated(rotation))
 
 	var bullet_instance = bullet_scene.instantiate()
 	get_tree().get_root().call_deferred("add_child", bullet_instance)
@@ -43,7 +43,6 @@ func fire():
 func _physics_process(delta: float) -> void:
 	player_movement()
 	move_and_slide()
-	
 	if Input.is_action_just_pressed("fire"):
 		fire()
 
