@@ -21,4 +21,10 @@ func _physics_process(delta: float) -> void:
 # TO DO:
 # if bullet hits enemy, enemy take damage
 # enemy has 5 max HP. bullet does 1 dmg
-# also fix enemy spawn pos
+# also fix enemy spawn poss
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print("Something entered: ", body.name)
+	if "Bullet" in body.name:
+		queue_free()
