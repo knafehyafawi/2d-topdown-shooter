@@ -93,8 +93,8 @@ texture = ExtResource("3_5a7ea")
 
 [sub_resource type="TileSet" id="TileSet_fo5ed"]
 occlusion_layer_0/light_mask = 1
+occlusion_layer_0/sdf_collision = true
 physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_8j60k")
 
 [node name="World" type="Node2D" unique_id=1237656125]

@@ -9,15 +9,6 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a02cp"]
 size = Vector2(16, 16)
 
-[sub_resource type="Gradient" id="Gradient_cvnsp"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_6t5aa"]
-gradient = SubResource("Gradient_cvnsp")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
-
 [node name="Player" type="CharacterBody2D" unique_id=1834170330]
 collision_layer = 2
 script = ExtResource("1_cvnsp")
@@ -32,11 +23,5 @@ texture = ExtResource("2_6t5aa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1252376344]
 shape = SubResource("RectangleShape2D_a02cp")
-
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1694113275]
-energy = 5.0
-shadow_enabled = true
-texture = SubResource("GradientTexture2D_6t5aa")
-texture_scale = 5.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
