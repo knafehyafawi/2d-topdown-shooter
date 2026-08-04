@@ -48,5 +48,6 @@ func kill():
 	get_tree().reload_current_scene()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if "Enemy" in body.name:
+	print("Touched: ", body.name, " | in enemies group: ", body.is_in_group("enemies"))
+	if body.is_in_group("enemies"):
 		kill()

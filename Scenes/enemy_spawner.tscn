@@ -8,5 +8,3 @@ script = ExtResource("1_8h7h8")
 enemy_scenes = Array[PackedScene]([ExtResource("2_cdqhx")])
 
 [node name="SpawnTimer" type="Timer" parent="." unique_id=1727193622]
-
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
