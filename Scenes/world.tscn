@@ -10,7 +10,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32
 outlines = Array[PackedVector2Array]([PackedVector2Array(-1752, -585, -1752, 1217, 1876, 1217, 1876, -585)])
 parsed_geometry_type = 1
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5a7ea"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hgpy0"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8j60k"]
@@ -52,7 +52,7 @@ polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8j60k"]
 texture = ExtResource("3_5a7ea")
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_5a7ea")
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_hgpy0")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 3:0/0 = 0
 3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_k7acu")
@@ -98,6 +98,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8j60k")
 
 [node name="World" type="Node2D" unique_id=1237656125]
+top_level = true
 
 [node name="Player" parent="." unique_id=1834170330 instance=ExtResource("1_a02cp")]
 position = Vector2(0, 1)

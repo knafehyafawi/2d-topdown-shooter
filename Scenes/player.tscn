@@ -20,6 +20,7 @@ shape = SubResource("RectangleShape2D_go701")
 texture = ExtResource("2_6t5aa")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1119569938]
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1252376344]
 shape = SubResource("RectangleShape2D_a02cp")
