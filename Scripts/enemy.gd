@@ -1,20 +1,25 @@
 extends CharacterBody2D
 
 @export var max_health: int = 3
+@export var speed: float = 150.0
+
+@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
+
+
 var health: int
-
-#const SPEED = 300.0
 var motion = Vector2()
-
-#@onready var player: PackedScene = preload("res://Scenes/player.tscn")
 
 func _ready() -> void:
 	health = max_health
 
 func _physics_process(delta: float) -> void:
 	var player = get_parent().get_node("Player")
-	position += (player.position - position) / 50
-	look_at(player.position)
+	nav_agent.target_position = player.global_position
+	
+	var next_pos = nav_agent.get_next_path_position()
+	var direction = (next_pos - global_position).normalized()
+	velocity = direction * 150.0
+	look_at(next_pos)
 	move_and_slide()
 
 func take_damage(amount: int) -> void:
