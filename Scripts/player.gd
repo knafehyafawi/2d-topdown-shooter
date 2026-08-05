@@ -6,6 +6,8 @@ var input_dir = Vector2()
 
 @onready var bullet_scene: PackedScene = preload("res://Scenes/bullet.tscn")
 
+var score: int = 0
+
 func _process(_delta: float) -> void:
 		input_dir = Input.get_vector("left", "right", "up", "down")
 
@@ -45,7 +47,7 @@ func _physics_process(_delta: float) -> void:
 
 func kill():
 	get_tree().paused = true
-	$"../DeathMenu".visible = true
+	$"../DeathMenu".show_game_over(score) # = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	#################### debug!!!!!!! ####################

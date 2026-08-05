@@ -28,8 +28,9 @@ func _physics_process(_delta: float) -> void:
 func take_damage(amount: int) -> void:
 	health -= amount
 	if health <= 0:
+		var player = get_parent().get_node("Player")
+		player.score += 1
 		queue_free()
-
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("bullets"):
