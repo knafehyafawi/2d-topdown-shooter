@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
-const BULLET_SPEED = 1000
+@export var speed = 200.0
+@export var bullet_speed = 1000
 var input_dir = Vector2()
 
 @onready var bullet_scene: PackedScene = preload("res://Scenes/bullet.tscn")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 		input_dir = Input.get_vector("left", "right", "up", "down")
 
 ################ debug func, do not delete ###################
@@ -17,10 +17,10 @@ func _process(delta: float) -> void:
 
 func player_movement() -> void:
 	if input_dir:
-		velocity = input_dir.normalized() * SPEED
+		velocity = input_dir.normalized() * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.y = move_toward(velocity.y, 0, speed)
 	
 	look_at(get_global_mouse_position())
 
@@ -34,10 +34,10 @@ func fire():
 	get_tree().get_root().call_deferred("add_child", bullet_instance)
 	bullet_instance.position = get_global_position()
 	bullet_instance.rotation = rotation
-	bullet_instance.apply_impulse(Vector2(BULLET_SPEED, 0).rotated(rotation))
+	bullet_instance.apply_impulse(Vector2(bullet_speed, 0).rotated(rotation))
 	
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	player_movement()
 	move_and_slide()
 	if Input.is_action_just_pressed("fire"):
@@ -48,7 +48,8 @@ func kill():
 	$"../DeathMenu".visible = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	#print("Killed by: ", body.name, " at position: ", body.global_position, " | player at: ", global_position, " | distance: ", body.global_position.distance_to(global_position)) # debug
+	#################### debug!!!!!!! ####################
+	#print("Killed by: ", body.name, " at position: ", body.global_position, " | player at: ", global_position, " | distance: ", body.global_position.distance_to(global_position))
 	if body.is_in_group("enemies"):
 		if body.has_method("get") and body.can_deal_damage:
 			kill()
