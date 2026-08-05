@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://lemwh6bthe8g"]
+
+[ext_resource type="Script" uid="uid://xl0fwxhog2vm" path="res://Scenes/death_menu.gd" id="1_8sm51"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1176570567]
+process_mode = 3
+script = ExtResource("1_8sm51")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=720197742]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="Button_PlayAgain" type="Button" parent="." unique_id=635353011]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -75.0
+offset_right = 225.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Play Again"
+autowrap_mode = 3
+autowrap_trim_flags = 192
+
+[node name="Button_Quit" type="Button" parent="." unique_id=1282204828]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = 141.0
+offset_right = 112.5
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Quit"
+autowrap_mode = 3
+autowrap_trim_flags = 192
+
+[connection signal="pressed" from="Button_PlayAgain" to="." method="_on_button_play_again_pressed"]
+[connection signal="pressed" from="Button_Quit" to="." method="_on_button_quit_pressed"]

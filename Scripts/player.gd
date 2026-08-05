@@ -45,7 +45,8 @@ func _physics_process(delta: float) -> void:
 		fire()
 
 func kill():
-	get_tree().reload_current_scene()
+	get_tree().paused = true
+	$"../DeathMenu".visible = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print("Touched: ", body.name, " | in enemies group: ", body.is_in_group("enemies"))
