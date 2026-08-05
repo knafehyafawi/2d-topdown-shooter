@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://3kf5y50b7pns"]
 
 [ext_resource type="PackedScene" uid="uid://b8jh1bspkjp4r" path="res://Scenes/player.tscn" id="1_a02cp"]
-[ext_resource type="Texture2D" uid="uid://bmamywvlq4gio" path="res://Assets/tilemap.png" id="3_5a7ea"]
+[ext_resource type="Texture2D" uid="uid://bmamywvlq4gio" path="res://Assets/Tilemap/tilemap.png" id="3_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://cl1686ahdl71f" path="res://Scenes/enemy_spawner.tscn" id="4_8j60k"]
 [ext_resource type="PackedScene" uid="uid://lemwh6bthe8g" path="res://Scenes/death_menu.tscn" id="5_fo5ed"]
 

@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://c0xhqawbi8vxt"]
+
+[ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://cmp41tnm8xtyf" path="res://Assets/Branding/Itchio Branding/Itchio Logos/itchio-logo-textless-white.png" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://capmupnbt2wsq" path="res://Assets/Branding/Itchio Branding/Itchio Logos/itchio-logo-textless-black.png" id="3_n45e2"]
+[ext_resource type="Texture2D" uid="uid://brpb2x2tv67ir" path="res://Assets/Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_White.png" id="4_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://dvgesclqeshi5" path="res://Assets/Branding/NG Branding/official_ng_logo.png" id="4_opfnp"]
+[ext_resource type="Texture2D" uid="uid://5infso56wvbb" path="res://Assets/Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_Black.png" id="5_yhxw7"]
+
+[node name="MainMenu" type="Control" unique_id=2118557268]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameButtons" type="VBoxContainer" parent="." unique_id=1990640298]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.5
+offset_top = -131.75
+offset_right = 266.5
+offset_bottom = 131.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="PlayButton" type="Button" parent="GameButtons" unique_id=1992968119]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_1ehe0")
+theme_override_font_sizes/font_size = 60
+text = "Play Game"
+
+[node name="OptionsAndExit" type="HBoxContainer" parent="GameButtons" unique_id=1962224432]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="OptionsButton" type="Button" parent="GameButtons/OptionsAndExit" unique_id=1381511571]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_1ehe0")
+theme_override_font_sizes/font_size = 40
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="GameButtons/OptionsAndExit" unique_id=1051342392]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("2_1ehe0")
+theme_override_font_sizes/font_size = 40
+text = "Exit"
+
+[node name="Links" type="HBoxContainer" parent="." unique_id=1441414768]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -116.5
+offset_top = -75.0
+offset_right = 116.5
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_1ehe0")
+alignment = 1
+
+[node name="ItchioButton" type="TextureButton" parent="Links" unique_id=1840665976]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture_normal = ExtResource("2_ce3w2")
+texture_pressed = ExtResource("3_n45e2")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="GitHubButton" type="TextureButton" parent="Links" unique_id=1623011395]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture_normal = ExtResource("4_cp0ys")
+texture_pressed = ExtResource("5_yhxw7")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="NGButton" type="TextureButton" parent="Links" unique_id=383060572]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture_normal = ExtResource("4_opfnp")
+ignore_texture_size = true
+stretch_mode = 4
