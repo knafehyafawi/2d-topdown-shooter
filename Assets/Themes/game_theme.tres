@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://rtmq70pxt6is"]
+
+[ext_resource type="FontFile" uid="uid://d2045h43kaqcw" path="res://Assets/Fonts/SevenFifteenMonoRounded-Regular.ttf" id="1_551l1"]
+
+[resource]
+default_font = ExtResource("1_551l1")
+default_font_size = 20
