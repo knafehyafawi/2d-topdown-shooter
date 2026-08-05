@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 500.0
+const SPEED = 200.0
 const BULLET_SPEED = 1000
 var input_dir = Vector2()
 
@@ -8,9 +8,8 @@ var input_dir = Vector2()
 
 func _process(delta: float) -> void:
 		input_dir = Input.get_vector("left", "right", "up", "down")
-		# queue_redraw()
 
-################ debug, do not delete ###################
+################ debug func, do not delete ###################
 #func _draw():
 	#draw_circle(Vector2.ZERO, 3, Color.RED)  # mark player origin
 	#draw_circle(Vector2(20, 0), 3, Color.GREEN)  # mark spawn point in local space
@@ -49,6 +48,7 @@ func kill():
 	$"../DeathMenu".visible = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("Touched: ", body.name, " | in enemies group: ", body.is_in_group("enemies"))
+	#print("Killed by: ", body.name, " at position: ", body.global_position, " | player at: ", global_position, " | distance: ", body.global_position.distance_to(global_position)) # debug
 	if body.is_in_group("enemies"):
-		kill()
+		if body.has_method("get") and body.can_deal_damage:
+			kill()
