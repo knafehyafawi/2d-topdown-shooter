@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cmp41tnm8xtyf" path="res://Assets/Branding/Itchio Branding/Itchio Logos/itchio-logo-textless-white.png" id="2_ce3w2"]
 [ext_resource type="Texture2D" uid="uid://capmupnbt2wsq" path="res://Assets/Branding/Itchio Branding/Itchio Logos/itchio-logo-textless-black.png" id="3_n45e2"]
 [ext_resource type="Texture2D" uid="uid://brpb2x2tv67ir" path="res://Assets/Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_White.png" id="4_cp0ys"]
-[ext_resource type="Texture2D" uid="uid://dvgesclqeshi5" path="res://Assets/Branding/NG Branding/official_ng_logo.png" id="4_opfnp"]
 [ext_resource type="Texture2D" uid="uid://5infso56wvbb" path="res://Assets/Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_Black.png" id="5_yhxw7"]
 
 [node name="MainMenu" type="Control" unique_id=2118557268]
@@ -58,21 +57,22 @@ text = "Exit"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=133307136]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 12
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -116.5
-offset_top = -75.0
-offset_right = 116.5
+offset_top = -151.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("2_1ehe0")
+theme_override_constants/separation = 15
+alignment = 1
 
 [node name="Links" type="HBoxContainer" parent="VBoxContainer" unique_id=1441414768]
 layout_mode = 2
 theme = ExtResource("2_1ehe0")
-theme_override_constants/separation = 46
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="ItchioButton" type="TextureButton" parent="VBoxContainer/Links" unique_id=1840665976]
@@ -91,17 +91,11 @@ texture_pressed = ExtResource("5_yhxw7")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="NGButton" type="TextureButton" parent="VBoxContainer/Links" unique_id=383060572]
-visible = false
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-texture_normal = ExtResource("4_opfnp")
-ignore_texture_size = true
-stretch_mode = 4
-
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1745527854]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-text = "Check out these links!
-
-"
+theme = ExtResource("2_1ehe0")
+theme_override_font_sizes/font_size = 20
+text = "Thank you for downloading and playing! If you liked the game, see the links here!"
 horizontal_alignment = 1
+autowrap_mode = 3
