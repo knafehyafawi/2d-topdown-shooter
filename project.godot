@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="2d Topdown Shooter"
-run/main_scene="uid://3kf5y50b7pns"
+run/main_scene="uid://c0xhqawbi8vxt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [input]
