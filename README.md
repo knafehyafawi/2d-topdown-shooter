@@ -10,8 +10,8 @@ All assets and work are my own unless stated otherwise.
 
 ## Platforms
 
-You can download my game via itch.io [here]{https://knafehyafawi.itch.io/2d-top-down-shooter}
+You can download my game via itch.io here: https://knafehyafawi.itch.io/2d-top-down-shooter
 
 To be released on:
 - Web
-- Newgrounds (see my account [here]{https://adash619.newgrounds.com/}
+- Newgrounds (see my account here: https://adash619.newgrounds.com/
