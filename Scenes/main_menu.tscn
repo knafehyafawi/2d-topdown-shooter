@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://c0xhqawbi8vxt"]
 
+[ext_resource type="Script" uid="uid://gf6mmh0c3qqb" path="res://Scripts/main_menu.gd" id="1_opfnp"]
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="2_1ehe0"]
-[ext_resource type="Texture2D" uid="uid://cmp41tnm8xtyf" path="res://Assets/Branding/Itchio Branding/Itchio Logos/itchio-logo-textless-white.png" id="2_ce3w2"]
-[ext_resource type="Texture2D" uid="uid://capmupnbt2wsq" path="res://Assets/Branding/Itchio Branding/Itchio Logos/itchio-logo-textless-black.png" id="3_n45e2"]
-[ext_resource type="Texture2D" uid="uid://brpb2x2tv67ir" path="res://Assets/Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_White.png" id="4_cp0ys"]
-[ext_resource type="Texture2D" uid="uid://5infso56wvbb" path="res://Assets/Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_Black.png" id="5_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://cmp41tnm8xtyf" path="res://Assets/Branding/Other Branding/Itchio Branding/Itchio Logos/itchio-logo-textless-white.png" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://cmxko1kitdcso" path="res://Assets/Branding/Game Branding/TitleScreenStatic.png" id="3_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://capmupnbt2wsq" path="res://Assets/Branding/Other Branding/Itchio Branding/Itchio Logos/itchio-logo-textless-black.png" id="3_n45e2"]
+[ext_resource type="Texture2D" uid="uid://brpb2x2tv67ir" path="res://Assets/Branding/Other Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_White.png" id="4_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://5infso56wvbb" path="res://Assets/Branding/Other Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_Black.png" id="5_yhxw7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yhxw7"]
+texture = ExtResource("3_cp0ys")
+modulate_color = Color(1, 1, 1, 0.78431374)
 
 [node name="MainMenu" type="Control" unique_id=2118557268]
 layout_mode = 3
@@ -13,6 +19,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_opfnp")
+
+[node name="TitleBG" type="Panel" parent="." unique_id=829573915]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_1ehe0")
+theme_override_styles/panel = SubResource("StyleBoxTexture_yhxw7")
 
 [node name="GameButtons" type="VBoxContainer" parent="." unique_id=1990640298]
 layout_mode = 1
@@ -21,10 +38,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -266.5
-offset_top = -131.75
-offset_right = 266.5
-offset_bottom = 131.75
+offset_left = -275.0
+offset_top = -52.0
+offset_right = 275.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
@@ -55,7 +72,7 @@ theme = ExtResource("2_1ehe0")
 theme_override_font_sizes/font_size = 40
 text = "Exit"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=133307136]
+[node name="Links" type="VBoxContainer" parent="." unique_id=133307136]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -69,13 +86,13 @@ theme = ExtResource("2_1ehe0")
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="Links" type="HBoxContainer" parent="VBoxContainer" unique_id=1441414768]
+[node name="LinksSorter" type="HBoxContainer" parent="Links" unique_id=1441414768]
 layout_mode = 2
 theme = ExtResource("2_1ehe0")
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="ItchioButton" type="TextureButton" parent="VBoxContainer/Links" unique_id=1840665976]
+[node name="ItchioButton" type="TextureButton" parent="Links/LinksSorter" unique_id=1840665976]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 texture_normal = ExtResource("2_ce3w2")
@@ -83,7 +100,7 @@ texture_pressed = ExtResource("3_n45e2")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="GitHubButton" type="TextureButton" parent="VBoxContainer/Links" unique_id=1623011395]
+[node name="GitHubButton" type="TextureButton" parent="Links/LinksSorter" unique_id=1623011395]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 texture_normal = ExtResource("4_cp0ys")
@@ -91,7 +108,7 @@ texture_pressed = ExtResource("5_yhxw7")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1745527854]
+[node name="Label" type="Label" parent="Links" unique_id=1745527854]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme = ExtResource("2_1ehe0")
@@ -99,3 +116,25 @@ theme_override_font_sizes/font_size = 20
 text = "Thank you for downloading and playing! If you liked the game, see the links here!"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="Credits" type="Button" parent="." unique_id=753926888]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_1ehe0")
+theme_override_font_sizes/font_size = 40
+text = "Credits"
+
+[connection signal="pressed" from="GameButtons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="GameButtons/OptionsAndExit/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="GameButtons/OptionsAndExit/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Links/LinksSorter/ItchioButton" to="." method="_on_itchio_button_pressed"]
+[connection signal="pressed" from="Links/LinksSorter/GitHubButton" to="." method="_on_git_hub_button_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
