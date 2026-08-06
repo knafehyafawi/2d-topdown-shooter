@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b8jh1bspkjp4r" path="res://Scenes/player.tscn" id="1_a02cp"]
 [ext_resource type="Texture2D" uid="uid://bmamywvlq4gio" path="res://Assets/Tilemap/tilemap.png" id="3_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://cl1686ahdl71f" path="res://Scenes/enemy_spawner.tscn" id="4_8j60k"]
+[ext_resource type="PackedScene" uid="uid://bnduid6su3aao" path="res://Scenes/hud.tscn" id="5_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://lemwh6bthe8g" path="res://Scenes/death_menu.tscn" id="5_fo5ed"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_5a7ea"]
@@ -177,5 +178,7 @@ position = Vector2(898, -166)
 
 [node name="DeathMenu" parent="." unique_id=1176570567 instance=ExtResource("5_fo5ed")]
 visible = false
+
+[node name="HUD" parent="." unique_id=1772401344 instance=ExtResource("5_5ukr8")]
 
 [editable path="EnemySpawner"]
