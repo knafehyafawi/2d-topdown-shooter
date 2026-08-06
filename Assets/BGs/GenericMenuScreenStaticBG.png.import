@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmxko1kitdcso"
-path="res://.godot/imported/TitleScreenStatic.png-377c59cc666bee363f6ecd6c24f34dcf.ctex"
+uid="uid://dp22ogpi6evqk"
+path="res://.godot/imported/GenericMenuScreenStaticBG.png-eebfc75311f69cd17fafa4baeb2b190e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Branding/Game Branding/TitleScreenStatic.png"
-dest_files=["res://.godot/imported/TitleScreenStatic.png-377c59cc666bee363f6ecd6c24f34dcf.ctex"]
+source_file="res://Assets/BGs/GenericMenuScreenStaticBG.png"
+dest_files=["res://.godot/imported/GenericMenuScreenStaticBG.png-eebfc75311f69cd17fafa4baeb2b190e.ctex"]
 
 [params]
 

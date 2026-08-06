@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://gf6mmh0c3qqb" path="res://Scripts/main_menu.gd" id="1_opfnp"]
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="2_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://cmp41tnm8xtyf" path="res://Assets/Branding/Other Branding/Itchio Branding/Itchio Logos/itchio-logo-textless-white.png" id="2_ce3w2"]
-[ext_resource type="Texture2D" uid="uid://cmxko1kitdcso" path="res://Assets/Branding/Game Branding/TitleScreenStatic.png" id="3_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://cmxko1kitdcso" path="res://Assets/BGs/TitleScreenStatic.png" id="3_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://capmupnbt2wsq" path="res://Assets/Branding/Other Branding/Itchio Branding/Itchio Logos/itchio-logo-textless-black.png" id="3_n45e2"]
 [ext_resource type="Texture2D" uid="uid://brpb2x2tv67ir" path="res://Assets/Branding/Other Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_White.png" id="4_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://5infso56wvbb" path="res://Assets/Branding/Other Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_Black.png" id="5_yhxw7"]

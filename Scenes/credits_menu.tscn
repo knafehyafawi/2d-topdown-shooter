@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://jhhdkya4fw8i"]
+
+[ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_b3rhs"]
+[ext_resource type="Script" uid="uid://cppjvefqcqfg5" path="res://Scripts/credits_menu.gd" id="1_pf8rm"]
+
+[node name="credits_menu" type="CanvasLayer" unique_id=1463994057]
+script = ExtResource("1_pf8rm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=199020672]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="BackButton" type="Button" parent="." unique_id=1749143112]
+anchors_preset = -1
+anchor_right = 0.0625
+anchor_bottom = 0.08024691
+theme = ExtResource("1_b3rhs")
+theme_override_font_sizes/font_size = 40
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="VScrollBar" type="VScrollBar" parent="." unique_id=109539184]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
