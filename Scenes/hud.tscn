@@ -13,8 +13,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_bjfho")
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
 
 [node name="ScoreLabel" type="Label" parent="MarginContainer" unique_id=850069269]
+custom_minimum_size = Vector2(60, 20)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+text = "Score: 0"

@@ -47,6 +47,7 @@ func _physics_process(_delta: float) -> void:
 
 func kill():
 	get_tree().paused = true
+	$"../HUD".hide()
 	$"../DeathMenu".show_game_over(score)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
