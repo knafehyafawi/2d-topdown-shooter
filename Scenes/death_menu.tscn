@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://lemwh6bthe8g"]
 
-[ext_resource type="Script" uid="uid://xl0fwxhog2vm" path="res://Scenes/death_menu.gd" id="1_8sm51"]
+[ext_resource type="Script" uid="uid://xl0fwxhog2vm" path="res://Scripts/death_menu.gd" id="1_8sm51"]
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="2_ipdme"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1176570567]
