@@ -8,15 +8,28 @@ I followed a tutorial on YouTube on how to make a 2D top-down shooter, but since
 
 All assets and work are my own unless stated otherwise.
 
+## TODO:
+
+### For first release:
+- Audio
+- Options menu
+- Enemy types
+- Cosmetics
+
+### To-be implemented in updates:
+- Enemy types
+- Upgrade system
+- Procedural generation
+
 ---
 
 ## Platforms
 
-You can download my game via itch.io [here](https://knafehyafawi.itch.io/2d-top-down-shooter)
+You can download my game via itch.io [here](https://knafehyafawi.itch.io/2d-top-down-shooter).
 
 To be released on:
 - Web
 - Newgrounds (see my account [here](https://adash619.newgrounds.com/))
 
 ## Credits
-- "Seven Fifteen Font" by Douglas Vautour (Burpy Fresh) is licensed under CC-BY 4.0. See [here](https://burpyfresh.itch.io/seven-fifteen-font).
+- ["Seven Fifteen Font"](https://burpyfresh.itch.io/seven-fifteen-font) by Douglas Vautour (Burpy Fresh) is licensed under CC-BY 4.0.
