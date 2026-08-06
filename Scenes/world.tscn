@@ -160,6 +160,21 @@ position = Vector2(825, -431)
 [node name="Marker2D13" type="Marker2D" parent="EnemySpawner" unique_id=1107820259]
 position = Vector2(-1060, -40)
 
+[node name="Marker2D14" type="Marker2D" parent="EnemySpawner" unique_id=1625914288]
+position = Vector2(-9, -322)
+
+[node name="Marker2D15" type="Marker2D" parent="EnemySpawner" unique_id=1554710257]
+position = Vector2(-1656, 952)
+
+[node name="Marker2D16" type="Marker2D" parent="EnemySpawner" unique_id=935041615]
+position = Vector2(936, 701)
+
+[node name="Marker2D17" type="Marker2D" parent="EnemySpawner" unique_id=1083252838]
+position = Vector2(54, 741)
+
+[node name="Marker2D18" type="Marker2D" parent="EnemySpawner" unique_id=1944697876]
+position = Vector2(898, -166)
+
 [node name="DeathMenu" parent="." unique_id=1176570567 instance=ExtResource("5_fo5ed")]
 visible = false
 

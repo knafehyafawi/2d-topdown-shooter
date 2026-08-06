@@ -17,3 +17,11 @@ func _ready() -> void:
 
 func _on_credits_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+
+func _on_itchio_button_pressed() -> void:
+	OS.shell_open("https://knafehyafawi.itch.io/")
+
+
+func _on_git_hub_button_pressed() -> void:
+		OS.shell_open("https://github.com/knafehyafawi/2d-topdown-shooter")

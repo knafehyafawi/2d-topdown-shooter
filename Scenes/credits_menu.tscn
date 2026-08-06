@@ -3,6 +3,10 @@
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_b3rhs"]
 [ext_resource type="Script" uid="uid://cppjvefqcqfg5" path="res://Scripts/credits_menu.gd" id="1_pf8rm"]
 [ext_resource type="Texture2D" uid="uid://cmxko1kitdcso" path="res://Assets/BGs/TitleScreenStatic.png" id="3_xqd6p"]
+[ext_resource type="Texture2D" uid="uid://cmp41tnm8xtyf" path="res://Assets/Branding/Other Branding/Itchio Branding/Itchio Logos/itchio-logo-textless-white.png" id="4_xuvmf"]
+[ext_resource type="Texture2D" uid="uid://capmupnbt2wsq" path="res://Assets/Branding/Other Branding/Itchio Branding/Itchio Logos/itchio-logo-textless-black.png" id="5_b7tim"]
+[ext_resource type="Texture2D" uid="uid://brpb2x2tv67ir" path="res://Assets/Branding/Other Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_White.png" id="6_emf1i"]
+[ext_resource type="Texture2D" uid="uid://5infso56wvbb" path="res://Assets/Branding/Other Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_Black.png" id="7_gaibv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oouge"]
 texture = ExtResource("3_xqd6p")
@@ -39,6 +43,50 @@ vertical_scroll_mode = 0
 [node name="CreditsList" type="VBoxContainer" parent="ScrollContainer" unique_id=1249510180]
 layout_mode = 2
 
+[node name="Links" type="VBoxContainer" parent="." unique_id=1041525781]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -151.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_b3rhs")
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="LinksSorter" type="HBoxContainer" parent="Links" unique_id=1371072655]
+layout_mode = 2
+theme = ExtResource("1_b3rhs")
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ItchioButton" type="TextureButton" parent="Links/LinksSorter" unique_id=2044376331]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture_normal = ExtResource("4_xuvmf")
+texture_pressed = ExtResource("5_b7tim")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="GitHubButton" type="TextureButton" parent="Links/LinksSorter" unique_id=1205499169]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture_normal = ExtResource("6_emf1i")
+texture_pressed = ExtResource("7_gaibv")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Links" unique_id=2069132238]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+theme = ExtResource("1_b3rhs")
+theme_override_font_sizes/font_size = 20
+text = "If you liked the game, see the links here!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [node name="BackButton" type="Button" parent="." unique_id=1749143112]
 offset_right = 72.0
 offset_bottom = 52.0
@@ -46,4 +94,6 @@ theme = ExtResource("1_b3rhs")
 theme_override_font_sizes/font_size = 40
 text = "Back"
 
+[connection signal="pressed" from="Links/LinksSorter/ItchioButton" to="." method="_on_itchio_button_pressed"]
+[connection signal="pressed" from="Links/LinksSorter/GitHubButton" to="." method="_on_git_hub_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_credits_back_button_pressed"]
