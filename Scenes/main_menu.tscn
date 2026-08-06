@@ -122,7 +122,7 @@ custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme = ExtResource("2_1ehe0")
 theme_override_font_sizes/font_size = 20
-text = "Thank you for downloading and playing! If you liked the game, see the links here!"
+text = "Thank you for playing! If you liked the game, see the links here!"
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -140,6 +140,25 @@ grow_vertical = 0
 theme = ExtResource("2_1ehe0")
 theme_override_font_sizes/font_size = 40
 text = "Credits"
+
+[node name="TitleCard" type="Label" parent="." unique_id=1840808788]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -275.0
+offset_right = 272.0
+offset_bottom = 270.0
+grow_horizontal = 2
+theme = ExtResource("2_1ehe0")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 100
+text = "2D Top-Down Shooter"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="GameButtons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="GameButtons/OptionsAndExit/OptionsButton" to="." method="_on_options_button_pressed"]

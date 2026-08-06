@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bnduid6su3aao"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1772401344]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=677224101]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
