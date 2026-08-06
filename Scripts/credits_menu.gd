@@ -5,6 +5,8 @@ extends CanvasLayer
 	"Game by knafehyafawi",
 	"Font: SevenFifteen by Douglas Vautour (Burpy Fresh) - CC by 4.0",
 	"",
+	"Made in Godot 4.6.2",
+	"",
 	"Thank you for playing! :)"
 ]
 
