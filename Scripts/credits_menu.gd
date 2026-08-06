@@ -1,6 +1,19 @@
 extends CanvasLayer
 
 
-func _on_back_button_pressed() -> void:
-	get_tree().paused = false
+@export var credits: Array[String] = [
+	"Game by knafehyafawi",
+	"Font: SevenFifteen by Douglas Vautour (Burpy Fresh) - CC by 4.0",
+	"",
+	"Thank you for playing! :)"
+]
+
+func _ready() -> void:
+	visible = true
+	for line in credits:
+		var label = Label.new()
+		label.text = line
+		$ScrollContainer/CreditsList.add_child(label)
+
+func _on_credits_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")

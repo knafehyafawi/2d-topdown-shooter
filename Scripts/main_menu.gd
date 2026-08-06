@@ -23,3 +23,4 @@ func _on_git_hub_button_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/credits_menu.tscn")
+	

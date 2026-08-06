@@ -2,35 +2,48 @@
 
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_b3rhs"]
 [ext_resource type="Script" uid="uid://cppjvefqcqfg5" path="res://Scripts/credits_menu.gd" id="1_pf8rm"]
+[ext_resource type="Texture2D" uid="uid://cmxko1kitdcso" path="res://Assets/BGs/TitleScreenStatic.png" id="3_xqd6p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oouge"]
+texture = ExtResource("3_xqd6p")
+modulate_color = Color(1, 1, 1, 0.78431374)
 
 [node name="credits_menu" type="CanvasLayer" unique_id=1463994057]
 script = ExtResource("1_pf8rm")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=199020672]
+[node name="TitleBG" type="Panel" parent="." unique_id=604704215]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.5882353)
+theme = ExtResource("1_b3rhs")
+theme_override_styles/panel = SubResource("StyleBoxTexture_oouge")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=71431326]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -125.0
+offset_right = 250.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_b3rhs")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 0
+
+[node name="CreditsList" type="VBoxContainer" parent="ScrollContainer" unique_id=1249510180]
+layout_mode = 2
 
 [node name="BackButton" type="Button" parent="." unique_id=1749143112]
-anchors_preset = -1
-anchor_right = 0.0625
-anchor_bottom = 0.08024691
+offset_right = 72.0
+offset_bottom = 52.0
 theme = ExtResource("1_b3rhs")
 theme_override_font_sizes/font_size = 40
 text = "Back"
-metadata/_edit_use_anchors_ = true
 
-[node name="VScrollBar" type="VScrollBar" parent="." unique_id=109539184]
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_right = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_credits_back_button_pressed"]
