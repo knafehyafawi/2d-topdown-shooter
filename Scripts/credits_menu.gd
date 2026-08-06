@@ -25,3 +25,7 @@ func _on_itchio_button_pressed() -> void:
 
 func _on_git_hub_button_pressed() -> void:
 	OS.shell_open("https://github.com/knafehyafawi/2d-topdown-shooter")
+
+
+func _on_ng_button_pressed() -> void:
+	OS.shell_open("https://adash619.newgrounds.com/")

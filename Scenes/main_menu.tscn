@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://capmupnbt2wsq" path="res://Assets/Branding/Other Branding/Itchio Branding/Itchio Logos/itchio-logo-textless-black.png" id="3_n45e2"]
 [ext_resource type="Texture2D" uid="uid://brpb2x2tv67ir" path="res://Assets/Branding/Other Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_White.png" id="4_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://5infso56wvbb" path="res://Assets/Branding/Other Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_Black.png" id="5_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://dvgesclqeshi5" path="res://Assets/Branding/Other Branding/NG Branding/official_ng_logo.png" id="8_yhxw7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yhxw7"]
 texture = ExtResource("3_cp0ys")
@@ -108,6 +109,14 @@ texture_pressed = ExtResource("5_yhxw7")
 ignore_texture_size = true
 stretch_mode = 4
 
+[node name="NGButton" type="TextureButton" parent="Links/LinksSorter" unique_id=1359425563]
+visible = false
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture_normal = ExtResource("8_yhxw7")
+ignore_texture_size = true
+stretch_mode = 4
+
 [node name="Label" type="Label" parent="Links" unique_id=1745527854]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
@@ -137,4 +146,5 @@ text = "Credits"
 [connection signal="pressed" from="GameButtons/OptionsAndExit/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Links/LinksSorter/ItchioButton" to="." method="_on_itchio_button_pressed"]
 [connection signal="pressed" from="Links/LinksSorter/GitHubButton" to="." method="_on_git_hub_button_pressed"]
+[connection signal="pressed" from="Links/LinksSorter/NGButton" to="." method="_on_ng_button_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
