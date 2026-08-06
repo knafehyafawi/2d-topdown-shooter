@@ -3,8 +3,10 @@ extends CanvasLayer
 
 @export var credits: Array[String] = [
 	"Game by knafehyafawi",
+	"",
 	"Font: SevenFifteen by Douglas Vautour (Burpy Fresh) - CC by 4.0",
 	"",
+	"More features to come. Follow me on itch for updates!",
 	"Made in Godot 4.6.2",
 	"",
 	"Thank you for playing! :)"
