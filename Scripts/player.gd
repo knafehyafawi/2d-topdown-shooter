@@ -37,7 +37,12 @@ func fire():
 	#print("Spawn pos: ", global_position + Vector2(20, 0).rotated(rotation))
 	#########################################################
 	
+	var sfx_index = AudioServer.get_bus_index("SFX")
+	print("SFX volume_db: ", AudioServer.get_bus_volume_db(sfx_index))
+	print("SFX muted: ", AudioServer.is_bus_mute(sfx_index))
 	$ShootSound.play()
+	print("SFX bus index at fire time: ", AudioServer.get_bus_index("SFX"))
+	
 	var bullet_instance = bullet_scene.instantiate()
 	get_tree().get_root().call_deferred("add_child", bullet_instance)
 	bullet_instance.position = get_global_position()
