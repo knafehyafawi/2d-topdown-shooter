@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://byq5sq8jta6gy"]
+
+[ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_emv3i"]
+
+[node name="pause_menu" type="CanvasLayer" unique_id=1463994057]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1511494189]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Label" type="Label" parent="." unique_id=1968881210]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 72.0
+offset_bottom = 160.0
+grow_horizontal = 2
+theme = ExtResource("1_emv3i")
+theme_override_font_sizes/font_size = 80
+text = "Options"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1217718166]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 60
+theme_override_constants/margin_right = 60
+
+[node name="Everything" type="HBoxContainer" parent="MarginContainer" unique_id=297724669]
+layout_mode = 2
+theme = ExtResource("1_emv3i")
+theme_override_constants/separation = 100
+
+[node name="Audio" type="MarginContainer" parent="MarginContainer/Everything" unique_id=1116234905]
+layout_mode = 2
+theme = ExtResource("1_emv3i")
+theme_override_constants/margin_top = 150
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Everything/Audio" unique_id=1114735460]
+layout_mode = 2
+
+[node name="ControlsLabel" type="Label" parent="MarginContainer/Everything/Audio/VBoxContainer2" unique_id=1259723549]
+layout_mode = 2
+theme = ExtResource("1_emv3i")
+theme_override_font_sizes/font_size = 40
+text = "Controls:"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Everything/Audio/VBoxContainer2" unique_id=1513581568]
+layout_mode = 2
+text = "Move: WASD | Fire: Left click"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Everything/Audio" unique_id=1684411013]
+layout_mode = 2
+theme = ExtResource("1_emv3i")
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Everything/Audio/VBoxContainer" unique_id=1021734757]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Audio Settings"
+horizontal_alignment = 1
+
+[node name="Master" type="HBoxContainer" parent="MarginContainer/Everything/Audio/VBoxContainer" unique_id=1083994179]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Everything/Audio/VBoxContainer/Master" unique_id=1984131989]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Master"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/Everything/Audio/VBoxContainer/Master" unique_id=940143875]
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+ticks_on_borders = true
+
+[node name="Music" type="HBoxContainer" parent="MarginContainer/Everything/Audio/VBoxContainer" unique_id=27623989]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Everything/Audio/VBoxContainer/Music" unique_id=1824956202]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/Everything/Audio/VBoxContainer/Music" unique_id=199351826]
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+ticks_on_borders = true
+
+[node name="SFX" type="HBoxContainer" parent="MarginContainer/Everything/Audio/VBoxContainer" unique_id=206755034]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Everything/Audio/VBoxContainer/SFX" unique_id=1676800800]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/Everything/Audio/VBoxContainer/SFX" unique_id=1707025641]
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+ticks_on_borders = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Everything" unique_id=1958876879]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("1_emv3i")
+
+[node name="ResumeButton" type="Button" parent="MarginContainer/Everything/VBoxContainer" unique_id=664319219]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Resume"
+
+[node name="ReturnToMenuButton" type="Button" parent="MarginContainer/Everything/VBoxContainer" unique_id=1076748029]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Main Menu"
