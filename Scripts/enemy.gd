@@ -31,6 +31,14 @@ func take_damage(amount: int) -> void:
 		var player = get_parent().get_node("Player")
 		player.score += 1
 		get_parent().get_node("HUD").update_score(player.score)
+		
+		var death_sound = $DeathSound
+		remove_child(death_sound)
+		get_tree().get_root().add_child(death_sound)
+		death_sound.global_position = global_position
+		death_sound.play()
+		death_sound.finished.connect(death_sound.queue_free)
+		
 		queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

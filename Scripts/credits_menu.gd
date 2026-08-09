@@ -5,6 +5,7 @@ extends CanvasLayer
 	"Game by knafehyafawi",
 	"",
 	"Font: SevenFifteen by Douglas Vautour (Burpy Fresh) - CC by 4.0",
+	"Sound effects from Kenney's free assets - (Creative Commons Zero, CC0)",
 	"",
 	"More features to come. Follow me on itch for updates!",
 	"Made in Godot 4.6.2",
@@ -20,16 +21,20 @@ func _ready() -> void:
 		$ScrollContainer/CreditsList.add_child(label)
 
 func _on_credits_back_button_pressed() -> void:
+	AudioManager.play_back()
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 
 func _on_itchio_button_pressed() -> void:
+	AudioManager.play_select()
 	OS.shell_open("https://knafehyafawi.itch.io/")
 
 
 func _on_git_hub_button_pressed() -> void:
+	AudioManager.play_select()
 	OS.shell_open("https://github.com/knafehyafawi/2d-topdown-shooter")
 
 
 func _on_ng_button_pressed() -> void:
+	AudioManager.play_select()
 	OS.shell_open("https://adash619.newgrounds.com/")

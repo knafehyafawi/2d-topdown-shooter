@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dwqjjxd8sxgys"]
 
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_4kojj"]
+[ext_resource type="Script" uid="uid://b2j1kifjl6dt7" path="res://Scripts/audio_sliders.gd" id="2_3lg0h"]
 
 [node name="AudioSliders" type="VBoxContainer" unique_id=1088976632]
 theme = ExtResource("1_4kojj")
 theme_override_constants/separation = 10
 alignment = 1
+script = ExtResource("2_3lg0h")
 
 [node name="Label" type="Label" parent="." unique_id=1885098576]
 layout_mode = 2
@@ -23,7 +25,7 @@ text = "Master"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="Master" unique_id=1534568512]
+[node name="MasterSlider" type="HSlider" parent="Master" unique_id=1534568512]
 layout_mode = 2
 size_flags_horizontal = 3
 rounded = true
@@ -39,7 +41,7 @@ text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="Music" unique_id=1984488682]
+[node name="MusicSlider" type="HSlider" parent="Music" unique_id=1984488682]
 layout_mode = 2
 size_flags_horizontal = 3
 rounded = true
@@ -55,8 +57,12 @@ text = "SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="SFX" unique_id=1824596481]
+[node name="SFXSlider" type="HSlider" parent="SFX" unique_id=1824596481]
 layout_mode = 2
 size_flags_horizontal = 3
 rounded = true
 ticks_on_borders = true
+
+[connection signal="value_changed" from="Master/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="Music/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SFX/SFXSlider" to="." method="_on_sfx_slider_value_changed"]

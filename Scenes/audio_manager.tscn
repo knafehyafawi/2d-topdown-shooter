@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://s4ymcb4wyyld"]
+
+[ext_resource type="Script" uid="uid://dw2t12svyqvbe" path="res://Scripts/audio_manager.gd" id="1_0hehx"]
+[ext_resource type="AudioStream" uid="uid://b0rusn43f4mn1" path="res://Assets/Audio/SFX/Button sounds/select_006.ogg" id="1_qixve"]
+[ext_resource type="AudioStream" uid="uid://c8vtass06wc1k" path="res://Assets/Audio/SFX/Laser SFX/laserSmall_000.ogg" id="2_0hehx"]
+[ext_resource type="AudioStream" uid="uid://dq07dru067t1i" path="res://Assets/Audio/SFX/Button sounds/back_002.ogg" id="3_mjqhu"]
+[ext_resource type="AudioStream" uid="uid://bo2mngof8ou3b" path="res://Assets/Audio/SFX/Enemy Death/laser1.ogg" id="4_5kf6k"]
+
+[node name="AudioManager" type="Node" unique_id=1922413714]
+script = ExtResource("1_0hehx")
+
+[node name="SFX" type="Node" parent="." unique_id=983922139]
+
+[node name="SelectButtonSound" type="AudioStreamPlayer" parent="SFX" unique_id=1823234868]
+stream = ExtResource("1_qixve")
+bus = &"SFX"
+
+[node name="LaserSound" type="AudioStreamPlayer" parent="SFX" unique_id=966036719]
+stream = ExtResource("2_0hehx")
+bus = &"SFX"
+
+[node name="BackButtonSound" type="AudioStreamPlayer" parent="SFX" unique_id=893692990]
+stream = ExtResource("3_mjqhu")
+volume_db = -6.0
+bus = &"SFX"
+
+[node name="EnemyDeathSound" type="AudioStreamPlayer" parent="SFX" unique_id=254325016]
+stream = ExtResource("4_5kf6k")
+bus = &"SFX"
+
+[node name="Music" type="Node" parent="." unique_id=1849544664]

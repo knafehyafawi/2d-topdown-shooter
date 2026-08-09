@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c8a7l0hqo44b8" path="res://Scripts/enemy.gd" id="1_1f0kj"]
 [ext_resource type="Texture2D" uid="uid://bc6ix3eponaxn" path="res://Assets/Sprites/Enemy.png" id="2_1f0kj"]
+[ext_resource type="AudioStream" uid="uid://bo2mngof8ou3b" path="res://Assets/Audio/SFX/Enemy Death/laser1.ogg" id="3_afpow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go701"]
 size = Vector2(16, 16)
@@ -29,6 +30,10 @@ collision_mask = 8
 shape = SubResource("RectangleShape2D_a02cp")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=859127877]
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="." unique_id=1913255025]
+stream = ExtResource("3_afpow")
+bus = &"SFX"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

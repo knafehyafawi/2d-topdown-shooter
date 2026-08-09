@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8euni44iermg" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bcq8h3gpt3hor" path="res://Assets/Sprites/Player.png" id="2_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://c8vtass06wc1k" path="res://Assets/Audio/SFX/Laser SFX/laserSmall_000.ogg" id="3_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go701"]
 size = Vector2(16, 16)
@@ -24,5 +25,9 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1252376344]
 shape = SubResource("RectangleShape2D_a02cp")
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=1305121929]
+stream = ExtResource("3_6t5aa")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
