@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cjo7rwnq0kpdp" path="res://Scripts/options_menu.gd" id="1_l1wg4"]
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_uj0ok"]
 [ext_resource type="Texture2D" uid="uid://cmxko1kitdcso" path="res://Assets/BGs/TitleScreenStatic.png" id="2_l1wg4"]
+[ext_resource type="PackedScene" uid="uid://dwqjjxd8sxgys" path="res://Scenes/audio_sliders.tscn" id="4_inh3s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_inh3s"]
 texture = ExtResource("2_l1wg4")
@@ -49,81 +50,24 @@ layout_mode = 2
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Controls" type="VBoxContainer" parent="Options/Options2" unique_id=1114735460]
+[node name="ControlsHelp" type="VBoxContainer" parent="Options/Options2" unique_id=1114735460]
 layout_mode = 2
 alignment = 1
 
-[node name="ControlsLabel" type="Label" parent="Options/Options2/Controls" unique_id=1259723549]
+[node name="ControlsLabel" type="Label" parent="Options/Options2/ControlsHelp" unique_id=1259723549]
 layout_mode = 2
 theme = ExtResource("1_uj0ok")
 theme_override_font_sizes/font_size = 40
 text = "Controls:"
 horizontal_alignment = 1
 
-[node name="Controls" type="Label" parent="Options/Options2/Controls" unique_id=1513581568]
+[node name="Controls" type="Label" parent="Options/Options2/ControlsHelp" unique_id=1513581568]
 layout_mode = 2
 text = "Move: WASD | Fire: Left click | Pause: ESC"
 horizontal_alignment = 1
 
-[node name="Audio" type="VBoxContainer" parent="Options/Options2" unique_id=1684411013]
+[node name="AudioSliders" parent="Options/Options2" unique_id=1464155867 instance=ExtResource("4_inh3s")]
 layout_mode = 2
-theme = ExtResource("1_uj0ok")
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="Label" type="Label" parent="Options/Options2/Audio" unique_id=1021734757]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Audio Settings"
-horizontal_alignment = 1
-
-[node name="Master" type="HBoxContainer" parent="Options/Options2/Audio" unique_id=1083994179]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Options/Options2/Audio/Master" unique_id=1984131989]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-text = "Master"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HSlider" type="HSlider" parent="Options/Options2/Audio/Master" unique_id=940143875]
-layout_mode = 2
-size_flags_horizontal = 3
-rounded = true
-ticks_on_borders = true
-
-[node name="Music" type="HBoxContainer" parent="Options/Options2/Audio" unique_id=27623989]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Options/Options2/Audio/Music" unique_id=1824956202]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-text = "Music"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HSlider" type="HSlider" parent="Options/Options2/Audio/Music" unique_id=199351826]
-layout_mode = 2
-size_flags_horizontal = 3
-rounded = true
-ticks_on_borders = true
-
-[node name="SFX" type="HBoxContainer" parent="Options/Options2/Audio" unique_id=206755034]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Options/Options2/Audio/SFX" unique_id=1676800800]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-text = "SFX"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HSlider" type="HSlider" parent="Options/Options2/Audio/SFX" unique_id=1707025641]
-layout_mode = 2
-size_flags_horizontal = 3
-rounded = true
-ticks_on_borders = true
 
 [node name="BackButton" type="Button" parent="." unique_id=1300586723]
 offset_right = 72.0

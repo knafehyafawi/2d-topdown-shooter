@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://d23yqfqe261vc" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
+[ext_resource type="PackedScene" uid="uid://dwqjjxd8sxgys" path="res://Scenes/audio_sliders.tscn" id="3_1och7"]
 
 [node name="pause_menu" type="CanvasLayer" unique_id=1463994057]
 process_mode = 3
@@ -41,85 +42,28 @@ layout_mode = 2
 theme = ExtResource("1_emv3i")
 theme_override_constants/separation = 100
 
-[node name="Audio" type="MarginContainer" parent="MarginContainer/Everything" unique_id=1116234905]
+[node name="ButtonsNStuff" type="MarginContainer" parent="MarginContainer/Everything" unique_id=1116234905]
 layout_mode = 2
 theme = ExtResource("1_emv3i")
 theme_override_constants/margin_top = 150
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Everything/Audio" unique_id=1114735460]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Everything/ButtonsNStuff" unique_id=1114735460]
 layout_mode = 2
 
-[node name="ControlsLabel" type="Label" parent="MarginContainer/Everything/Audio/VBoxContainer2" unique_id=1259723549]
+[node name="ControlsLabel" type="Label" parent="MarginContainer/Everything/ButtonsNStuff/VBoxContainer2" unique_id=1259723549]
 layout_mode = 2
 theme = ExtResource("1_emv3i")
 theme_override_font_sizes/font_size = 40
 text = "Controls:"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/Everything/Audio/VBoxContainer2" unique_id=1513581568]
+[node name="Label" type="Label" parent="MarginContainer/Everything/ButtonsNStuff/VBoxContainer2" unique_id=1513581568]
 layout_mode = 2
 text = "Move: WASD | Fire: Left click
 Pause: ESC"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Everything/Audio" unique_id=1684411013]
+[node name="AudioSliders" parent="MarginContainer/Everything/ButtonsNStuff" unique_id=1088976632 instance=ExtResource("3_1och7")]
 layout_mode = 2
-theme = ExtResource("1_emv3i")
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="Label" type="Label" parent="MarginContainer/Everything/Audio/VBoxContainer" unique_id=1021734757]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Audio Settings"
-horizontal_alignment = 1
-
-[node name="Master" type="HBoxContainer" parent="MarginContainer/Everything/Audio/VBoxContainer" unique_id=1083994179]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/Everything/Audio/VBoxContainer/Master" unique_id=1984131989]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-text = "Master"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HSlider" type="HSlider" parent="MarginContainer/Everything/Audio/VBoxContainer/Master" unique_id=940143875]
-layout_mode = 2
-size_flags_horizontal = 3
-rounded = true
-ticks_on_borders = true
-
-[node name="Music" type="HBoxContainer" parent="MarginContainer/Everything/Audio/VBoxContainer" unique_id=27623989]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/Everything/Audio/VBoxContainer/Music" unique_id=1824956202]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-text = "Music"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HSlider" type="HSlider" parent="MarginContainer/Everything/Audio/VBoxContainer/Music" unique_id=199351826]
-layout_mode = 2
-size_flags_horizontal = 3
-rounded = true
-ticks_on_borders = true
-
-[node name="SFX" type="HBoxContainer" parent="MarginContainer/Everything/Audio/VBoxContainer" unique_id=206755034]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/Everything/Audio/VBoxContainer/SFX" unique_id=1676800800]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-text = "SFX"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HSlider" type="HSlider" parent="MarginContainer/Everything/Audio/VBoxContainer/SFX" unique_id=1707025641]
-layout_mode = 2
-size_flags_horizontal = 3
-rounded = true
-ticks_on_borders = true
 
 [node name="Buttons" type="VBoxContainer" parent="MarginContainer/Everything" unique_id=1958876879]
 layout_mode = 2

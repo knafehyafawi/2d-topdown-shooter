@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dwqjjxd8sxgys"]
+
+[ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_4kojj"]
+
+[node name="AudioSliders" type="VBoxContainer" unique_id=1088976632]
+theme = ExtResource("1_4kojj")
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=1885098576]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Audio Settings"
+horizontal_alignment = 1
+
+[node name="Master" type="HBoxContainer" parent="." unique_id=1422357961]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Master" unique_id=1588498028]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Master"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Master" unique_id=1534568512]
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+ticks_on_borders = true
+
+[node name="Music" type="HBoxContainer" parent="." unique_id=893048256]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Music" unique_id=1604338195]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Music" unique_id=1984488682]
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+ticks_on_borders = true
+
+[node name="SFX" type="HBoxContainer" parent="." unique_id=778961796]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SFX" unique_id=1481716250]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="SFX" unique_id=1824596481]
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+ticks_on_borders = true
