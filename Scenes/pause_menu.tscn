@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://byq5sq8jta6gy"]
 
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_emv3i"]
+[ext_resource type="Script" uid="uid://d23yqfqe261vc" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
 
 [node name="pause_menu" type="CanvasLayer" unique_id=1463994057]
+process_mode = 3
+script = ExtResource("1_k0w1u")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1511494189]
 anchors_preset = 15
@@ -55,7 +58,8 @@ horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/Everything/Audio/VBoxContainer2" unique_id=1513581568]
 layout_mode = 2
-text = "Move: WASD | Fire: Left click"
+text = "Move: WASD | Fire: Left click
+Pause: ESC"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Everything/Audio" unique_id=1684411013]
 layout_mode = 2
@@ -117,18 +121,21 @@ size_flags_horizontal = 3
 rounded = true
 ticks_on_borders = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Everything" unique_id=1958876879]
+[node name="Buttons" type="VBoxContainer" parent="MarginContainer/Everything" unique_id=1958876879]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme = ExtResource("1_emv3i")
 
-[node name="ResumeButton" type="Button" parent="MarginContainer/Everything/VBoxContainer" unique_id=664319219]
+[node name="ResumeButton" type="Button" parent="MarginContainer/Everything/Buttons" unique_id=664319219]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Resume"
 
-[node name="ReturnToMenuButton" type="Button" parent="MarginContainer/Everything/VBoxContainer" unique_id=1076748029]
+[node name="ReturnToMenuButton" type="Button" parent="MarginContainer/Everything/Buttons" unique_id=1076748029]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Main Menu"
+
+[connection signal="pressed" from="MarginContainer/Everything/Buttons/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Everything/Buttons/ReturnToMenuButton" to="." method="_on_return_to_menu_button_pressed"]

@@ -9,7 +9,12 @@ var input_dir = Vector2()
 var score: int = 0
 
 func _process(_delta: float) -> void:
-		input_dir = Input.get_vector("left", "right", "up", "down")
+	input_dir = Input.get_vector("left", "right", "up", "down")
+	
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused = true
+		$"../pause_menu".visible = true
+		$"../HUD".visible = false
 
 ################ debug func, do not delete ###################
 #func _draw():

@@ -62,7 +62,7 @@ horizontal_alignment = 1
 
 [node name="Controls" type="Label" parent="Options/Options2/Controls" unique_id=1513581568]
 layout_mode = 2
-text = "Move: WASD | Fire: Left click"
+text = "Move: WASD | Fire: Left click | Pause: ESC"
 horizontal_alignment = 1
 
 [node name="Audio" type="VBoxContainer" parent="Options/Options2" unique_id=1684411013]

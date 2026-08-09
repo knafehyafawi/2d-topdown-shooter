@@ -35,6 +35,26 @@ text = "Play Again"
 autowrap_mode = 3
 autowrap_trim_flags = 192
 
+[node name="Main Menu" type="Button" parent="." unique_id=718796182]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.5
+offset_top = 96.5
+offset_right = 112.5
+offset_bottom = 192.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_ipdme")
+theme_override_font_sizes/font_size = 40
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "Return to Main Menu"
+autowrap_mode = 3
+autowrap_trim_flags = 192
+
 [node name="Button_Quit" type="Button" parent="." unique_id=1282204828]
 anchors_preset = 8
 anchor_left = 0.5
@@ -42,9 +62,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -112.5
-offset_top = 152.0
+offset_top = 210.0
 offset_right = 112.5
-offset_bottom = 217.0
+offset_bottom = 275.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_ipdme")
@@ -87,4 +107,5 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="Button_PlayAgain" to="." method="_on_button_play_again_pressed"]
+[connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Button_Quit" to="." method="_on_button_quit_pressed"]
