@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://cpp2ss88ivxmq"]
+
+[ext_resource type="Script" uid="uid://cjo7rwnq0kpdp" path="res://Scripts/options_menu.gd" id="1_l1wg4"]
+[ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_uj0ok"]
+[ext_resource type="Texture2D" uid="uid://cmxko1kitdcso" path="res://Assets/BGs/TitleScreenStatic.png" id="2_l1wg4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_inh3s"]
+texture = ExtResource("2_l1wg4")
+modulate_color = Color(1, 1, 1, 0.78431374)
+
+[node name="options_menu" type="CanvasLayer" unique_id=1463994057]
+script = ExtResource("1_l1wg4")
+
+[node name="TitleBG" type="Panel" parent="." unique_id=1353252246]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uj0ok")
+theme_override_styles/panel = SubResource("StyleBoxTexture_inh3s")
+
+[node name="OptionsLabel" type="Label" parent="." unique_id=1968881210]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 72.0
+offset_bottom = 160.0
+grow_horizontal = 2
+theme = ExtResource("1_uj0ok")
+theme_override_font_sizes/font_size = 80
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Options" type="MarginContainer" parent="." unique_id=1116234905]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -130.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uj0ok")
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="Options2" type="VBoxContainer" parent="Options" unique_id=151295803]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Controls" type="VBoxContainer" parent="Options/Options2" unique_id=1114735460]
+layout_mode = 2
+alignment = 1
+
+[node name="ControlsLabel" type="Label" parent="Options/Options2/Controls" unique_id=1259723549]
+layout_mode = 2
+theme = ExtResource("1_uj0ok")
+theme_override_font_sizes/font_size = 40
+text = "Controls:"
+horizontal_alignment = 1
+
+[node name="Controls" type="Label" parent="Options/Options2/Controls" unique_id=1513581568]
+layout_mode = 2
+text = "Move: WASD | Fire: Left click"
+horizontal_alignment = 1
+
+[node name="Audio" type="VBoxContainer" parent="Options/Options2" unique_id=1684411013]
+layout_mode = 2
+theme = ExtResource("1_uj0ok")
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="Options/Options2/Audio" unique_id=1021734757]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Audio Settings"
+horizontal_alignment = 1
+
+[node name="Master" type="HBoxContainer" parent="Options/Options2/Audio" unique_id=1083994179]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/Options2/Audio/Master" unique_id=1984131989]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Master"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Options/Options2/Audio/Master" unique_id=940143875]
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+ticks_on_borders = true
+
+[node name="Music" type="HBoxContainer" parent="Options/Options2/Audio" unique_id=27623989]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/Options2/Audio/Music" unique_id=1824956202]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Options/Options2/Audio/Music" unique_id=199351826]
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+ticks_on_borders = true
+
+[node name="SFX" type="HBoxContainer" parent="Options/Options2/Audio" unique_id=206755034]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Options/Options2/Audio/SFX" unique_id=1676800800]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Options/Options2/Audio/SFX" unique_id=1707025641]
+layout_mode = 2
+size_flags_horizontal = 3
+rounded = true
+ticks_on_borders = true
+
+[node name="BackButton" type="Button" parent="." unique_id=1300586723]
+offset_right = 72.0
+offset_bottom = 52.0
+theme = ExtResource("1_uj0ok")
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[node name="VersionLabel" type="Label" parent="." unique_id=1587685280]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -102.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = 28.0
+grow_horizontal = 0
+theme = ExtResource("1_uj0ok")
+theme_override_font_sizes/font_size = 20
+text = "alpha v0.1.0"
+horizontal_alignment = 2

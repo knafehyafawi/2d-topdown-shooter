@@ -20,7 +20,7 @@ offset_bottom = 160.0
 grow_horizontal = 2
 theme = ExtResource("1_emv3i")
 theme_override_font_sizes/font_size = 80
-text = "Options"
+text = "Pause"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1217718166]
