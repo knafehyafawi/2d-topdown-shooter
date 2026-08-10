@@ -25,11 +25,14 @@ All assets and work are my own unless stated otherwise.
 
 ## Platforms
 
-You can download my game via itch.io [here](https://knafehyafawi.itch.io/2d-top-down-shooter).
+You can play my game via itch.io [here](https://knafehyafawi.itch.io/2d-top-down-shooter).
 
 To be released on:
-- Web
 - Newgrounds (see my account [here](https://adash619.newgrounds.com/))
+- Windows
+- Mac
+- Linux
 
 ## Credits
 - ["Seven Fifteen Font"](https://burpyfresh.itch.io/seven-fifteen-font) by Douglas Vautour (Burpy Fresh) is licensed under CC-BY 4.0.
+- SFX from [Kenney's free assets](https://kenney.nl/assets) - (Creative Commons Zero, CC0)
