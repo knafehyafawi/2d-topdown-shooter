@@ -2,11 +2,16 @@ extends Node2D
 
 @export var enemy_scenes: Array[PackedScene] = []
 @export var spawn_interval: float = 3.0
+@export var min_spawn_interval: float = 0.75
+@export var interval_decay_per_second: float = 0.02
 @export var enemies_per_spawn: int = 1
 @export var min_spawn_distance: float = 400.0
+@export var screen_margin: float = 100.0
 
 @onready var spawn_timer: Timer = $SpawnTimer
+
 var spawn_points: Array[Marker2D] = []
+var elapsed_time: float = 0.0
 
 func _ready() -> void:
 	#print("--- EnemySpawner _ready() called ---") #debug
@@ -26,10 +31,25 @@ func _ready() -> void:
 	
 	#print("Timer started, wait_time: ", spawn_timer.wait_time) #debug
 
+func _process(delta: float) -> void:
+	elapsed_time += delta
+	var current_interval = max(min_spawn_interval, spawn_interval - (elapsed_time * interval_decay_per_second))
+	spawn_timer.wait_time = current_interval
+
 func _on_spawn_timer_timeout() -> void:
 	#print("--- Timer timeout fired at ", Time.get_ticks_msec(), "ms ---") #debug
 	for i in enemies_per_spawn:
 		spawn_enemy()
+
+func is_off_screen(pos: Vector2) -> bool:
+	var camera = get_viewport().get_camera_2d()
+	if camera == null:
+		return true
+	var screen_size = get_viewport().get_visible_rect().size
+	var cam_pos = camera.get_screen_center_position()
+	var half_extents = (screen_size / camera.zoom) / 2.0 + Vector2(screen_margin, screen_margin)
+	var screen_rect = Rect2(cam_pos - half_extents, half_extents*2)
+	return not screen_rect.has_point(pos)
 
 func spawn_enemy() -> void:
 	if enemy_scenes.is_empty() or spawn_points.is_empty():
@@ -42,7 +62,7 @@ func spawn_enemy() -> void:
 	for point in spawn_points:
 		var dist = point.global_position.distance_to(player.global_position)
 		#print("Marker at ", point.global_position, " is ", dist, " px from player") # debug
-		if dist >= min_spawn_distance:
+		if dist >= min_spawn_distance and is_off_screen(point.global_position):
 			valid_points.append(point)
 	
 	if valid_points.is_empty():
