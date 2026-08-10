@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://8euni44iermg" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bcq8h3gpt3hor" path="res://Assets/Sprites/Player.png" id="2_6t5aa"]
 [ext_resource type="AudioStream" uid="uid://c8vtass06wc1k" path="res://Assets/Audio/SFX/Laser SFX/laserSmall_000.ogg" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://d2pv1gqhk3fyb" path="res://Assets/Sprites/crosshair-063.png" id="4_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go701"]
 size = Vector2(16, 16)
@@ -29,5 +30,11 @@ shape = SubResource("RectangleShape2D_a02cp")
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="." unique_id=1305121929]
 stream = ExtResource("3_6t5aa")
 bus = &"SFX"
+
+[node name="Crosshair063" type="Sprite2D" parent="." unique_id=781713143]
+position = Vector2(16, 0)
+rotation = 1.5707964
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_vgqql")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
