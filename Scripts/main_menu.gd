@@ -1,5 +1,7 @@
 extends Control
 
+func _ready() -> void:
+	$GameButtons/OptionsAndExit/ExitButton.visible = not PlatformUtils.is_web_build()
 
 func _on_play_button_pressed() -> void:
 	AudioManager.play_select()

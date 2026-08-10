@@ -2,6 +2,9 @@ extends CanvasLayer
 
 @onready var score_label: Label = $ScoreLabel
 
+func _ready() -> void:
+	$Button_Quit.visible = not PlatformUtils.is_web_build()
+
 func show_game_over(score: int) -> void:
 	visible = true
 	score_label.text = "Score: " + str(score)
