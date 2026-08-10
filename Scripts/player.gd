@@ -38,10 +38,10 @@ func fire():
 	#########################################################
 	
 	var sfx_index = AudioServer.get_bus_index("SFX")
-	print("SFX volume_db: ", AudioServer.get_bus_volume_db(sfx_index))
-	print("SFX muted: ", AudioServer.is_bus_mute(sfx_index))
+	#print("SFX volume_db: ", AudioServer.get_bus_volume_db(sfx_index))
+	#print("SFX muted: ", AudioServer.is_bus_mute(sfx_index))
 	$ShootSound.play()
-	print("SFX bus index at fire time: ", AudioServer.get_bus_index("SFX"))
+	#print("SFX bus index at fire time: ", AudioServer.get_bus_index("SFX"))
 	
 	var bullet_instance = bullet_scene.instantiate()
 	get_tree().get_root().call_deferred("add_child", bullet_instance)

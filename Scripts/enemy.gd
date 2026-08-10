@@ -33,7 +33,7 @@ func take_damage(amount: int) -> void:
 		get_parent().get_node("HUD").update_score(player.score)
 		
 		var death_sound = $DeathSound
-		print("SFX bus index at death time: ", AudioServer.get_bus_index("SFX"))
+		#print("SFX bus index at death time: ", AudioServer.get_bus_index("SFX"))
 		
 		remove_child(death_sound)
 		get_tree().get_root().add_child(death_sound)

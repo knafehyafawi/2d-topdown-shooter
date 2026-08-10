@@ -14,13 +14,13 @@ func _ready() -> void:
 	#print("Music slider value after sync: ", $Music/MusicSlider.value)
 
 func _on_master_slider_value_changed(value: float) -> void:
-	print("Master slider moved to: ", value)
+	#print("Master slider moved to: ", value)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value))
 
 func _on_music_slider_value_changed(value: float) -> void:
-	print("Music slider moved to: ", value)
+	#print("Music slider moved to: ", value)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(value))
 
 func _on_sfx_slider_value_changed(value: float) -> void:
-	print("SFX slider moved to: ", value)
+	#print("SFX slider moved to: ", value)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(value))
