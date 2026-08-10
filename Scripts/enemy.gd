@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var max_health: int = 3
+@export var max_health: int = 5
 var health: int
 
 @export var speed: float = 150.0
