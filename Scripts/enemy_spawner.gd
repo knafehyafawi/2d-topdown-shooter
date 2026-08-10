@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var enemy_scenes: Array[PackedScene] = []
-@export var spawn_interval: float = 3.0
-@export var min_spawn_interval: float = 0.75
+@export var spawn_interval: float = 7.5
+@export var min_spawn_interval: float = 0.5
 @export var interval_decay_per_second: float = 0.02
 @export var enemies_per_spawn: int = 1
 @export var min_spawn_distance: float = 400.0
