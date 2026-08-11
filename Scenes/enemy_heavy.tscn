@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://btdn1y3ktrs5e"]
+
+[ext_resource type="PackedScene" uid="uid://c7846m6ibxxsw" path="res://Scenes/enemy.tscn" id="1_8vro3"]
+[ext_resource type="Texture2D" uid="uid://bcq8h3gpt3hor" path="res://Assets/Sprites/Player.png" id="2_ovm36"]
+
+[node name="EnemyHeavy" unique_id=1834170330 instance=ExtResource("1_8vro3")]
+scale = Vector2(1.2, 1.2)
+max_health = 5
+speed = 100.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=742711394]
+scale = Vector2(1.2, 1.2)
+
+[node name="Sprite2D" parent="." index="1" unique_id=742084133]
+self_modulate = Color(0.47058824, 0.47058824, 0.47058824, 1)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_ovm36")
+
+[node name="Area2D" parent="." index="2" unique_id=1119569938]
+scale = Vector2(1.2, 1.2)
+
+[node name="CollisionShape2D" parent="Area2D" index="0" unique_id=1252376344]
+position = Vector2(-6.622739e-07, 6.622739e-07)
+scale = Vector2(1.2000004, 1.2000004)
+
+[node name="DeathSound" parent="." index="4" unique_id=1913255025]
+scale = Vector2(1.2, 1.2)
