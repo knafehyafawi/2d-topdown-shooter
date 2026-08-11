@@ -5,7 +5,7 @@
 [node name="EnemyFast" unique_id=1834170330 instance=ExtResource("1_7e8xf")]
 scale = Vector2(0.85, 0.85)
 max_health = 1
-speed = 200.0
+speed = 250.0
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=742711394]
 scale = Vector2(0.85, 0.85)
