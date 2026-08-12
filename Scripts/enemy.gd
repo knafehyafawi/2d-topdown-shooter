@@ -45,7 +45,7 @@ func take_damage(amount: int) -> void:
 		
 		queue_free()
 	else:
-		pass
+		flash_hit()
 
 func flash_hit() -> void:
 	$Sprite2D.modulate = base_color * 3.0
