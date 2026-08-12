@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://c7846m6ibxxsw"]
 
 [ext_resource type="Script" uid="uid://c8a7l0hqo44b8" path="res://Scripts/enemy.gd" id="1_1f0kj"]
-[ext_resource type="Texture2D" uid="uid://bc6ix3eponaxn" path="res://Assets/Sprites/Enemy.png" id="2_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://bcq8h3gpt3hor" path="res://Assets/Sprites/Entity.png" id="2_afpow"]
 [ext_resource type="AudioStream" uid="uid://bo2mngof8ou3b" path="res://Assets/Audio/SFX/Enemy Death/laser1.ogg" id="3_afpow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go701"]
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a02cp"]
-size = Vector2(15.046292, 15.046292)
+size = Vector2(16.141665, 16.141665)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1834170330 groups=["enemies"]]
 collision_layer = 4
@@ -19,15 +19,17 @@ max_health = 3
 shape = SubResource("RectangleShape2D_go701")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=742084133]
+modulate = Color(0.90588236, 0.3254902, 0.3254902, 1)
 position = Vector2(-2.9802322e-08, 4.7683716e-07)
 scale = Vector2(0.87500006, 0.87500006)
-texture = ExtResource("2_1f0kj")
+texture = ExtResource("2_afpow")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1119569938]
 collision_layer = 16
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1252376344]
+position = Vector2(-2.3841858e-07, 2.3841858e-07)
 shape = SubResource("RectangleShape2D_a02cp")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=859127877]

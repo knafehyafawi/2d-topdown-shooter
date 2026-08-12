@@ -6,6 +6,8 @@ var health: int
 @export var speed: float = 150.0
 var motion = Vector2()
 
+@onready var base_color: Color = $Sprite2D.modulate
+
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 var can_deal_damage: bool = false
 
@@ -42,6 +44,13 @@ func take_damage(amount: int) -> void:
 		death_sound.finished.connect(death_sound.queue_free)
 		
 		queue_free()
+	else:
+		pass
+
+func flash_hit() -> void:
+	$Sprite2D.modulate = base_color * 3.0
+	var tween = create_tween()
+	tween.tween_property($Sprite2D, "modulate", base_color, 0.15)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("bullets"):

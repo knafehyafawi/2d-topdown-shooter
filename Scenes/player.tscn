@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b8jh1bspkjp4r"]
 
 [ext_resource type="Script" uid="uid://8euni44iermg" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://bcq8h3gpt3hor" path="res://Assets/Sprites/Player.png" id="2_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://bcq8h3gpt3hor" path="res://Assets/Sprites/Entity.png" id="2_6t5aa"]
 [ext_resource type="AudioStream" uid="uid://c8vtass06wc1k" path="res://Assets/Audio/SFX/Laser SFX/laserSmall_000.ogg" id="3_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://d2pv1gqhk3fyb" path="res://Assets/Sprites/crosshair-063.png" id="4_vgqql"]
 
@@ -22,6 +22,7 @@ shape = SubResource("RectangleShape2D_go701")
 texture = ExtResource("2_6t5aa")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1119569938]
+scale = Vector2(0.9, 0.9)
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1252376344]
