@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://d23yqfqe261vc" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
 [ext_resource type="PackedScene" uid="uid://dwqjjxd8sxgys" path="res://Scenes/audio_settings.tscn" id="3_1och7"]
+[ext_resource type="PackedScene" uid="uid://dyr5s5xrrndwh" path="res://Scenes/hud_settings.tscn" id="4_bpi0q"]
 
 [node name="pause_menu" type="CanvasLayer" unique_id=1463994057]
 process_mode = 3
@@ -45,25 +46,29 @@ theme_override_constants/separation = 100
 [node name="ButtonsNStuff" type="MarginContainer" parent="MarginContainer/Everything" unique_id=1116234905]
 layout_mode = 2
 theme = ExtResource("1_emv3i")
-theme_override_constants/margin_top = 150
+theme_override_constants/margin_top = 100
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/Everything/ButtonsNStuff" unique_id=1114735460]
+[node name="Controls" type="VBoxContainer" parent="MarginContainer/Everything/ButtonsNStuff" unique_id=1114735460]
 layout_mode = 2
 
-[node name="ControlsLabel" type="Label" parent="MarginContainer/Everything/ButtonsNStuff/VBoxContainer2" unique_id=1259723549]
+[node name="ControlsLabel" type="Label" parent="MarginContainer/Everything/ButtonsNStuff/Controls" unique_id=1259723549]
 layout_mode = 2
 theme = ExtResource("1_emv3i")
 theme_override_font_sizes/font_size = 40
 text = "Controls:"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/Everything/ButtonsNStuff/VBoxContainer2" unique_id=1513581568]
+[node name="Guide" type="Label" parent="MarginContainer/Everything/ButtonsNStuff/Controls" unique_id=1513581568]
 layout_mode = 2
-text = "Move: WASD | Fire: Left click
-Pause: ESC"
+text = "Move: WASD | Aim: Point with mouse
+Fire: Left click | Pause: ESC"
 
 [node name="AudioSliders" parent="MarginContainer/Everything/ButtonsNStuff" unique_id=1088976632 instance=ExtResource("3_1och7")]
 layout_mode = 2
+
+[node name="HUDSettings" parent="MarginContainer/Everything/ButtonsNStuff" unique_id=1511179488 instance=ExtResource("4_bpi0q")]
+layout_mode = 2
+alignment = 2
 
 [node name="Buttons" type="VBoxContainer" parent="MarginContainer/Everything" unique_id=1958876879]
 layout_mode = 2

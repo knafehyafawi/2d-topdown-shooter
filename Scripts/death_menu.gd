@@ -7,7 +7,9 @@ func _ready() -> void:
 
 func show_game_over(score: int) -> void:
 	visible = true
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	score_label.text = "Score: " + str(score)
+	
 
 func _on_button_play_again_pressed() -> void:
 	AudioManager.play_select()
