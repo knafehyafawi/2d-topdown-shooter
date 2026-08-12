@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://8euni44iermg" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://bcq8h3gpt3hor" path="res://Assets/Sprites/Entity.png" id="2_6t5aa"]
 [ext_resource type="AudioStream" uid="uid://c8vtass06wc1k" path="res://Assets/Audio/SFX/Laser SFX/laserSmall_000.ogg" id="3_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://d2pv1gqhk3fyb" path="res://Assets/Sprites/crosshair-063.png" id="4_vgqql"]
+[ext_resource type="Texture2D" uid="uid://d2pv1gqhk3fyb" path="res://Assets/Sprites/DirectionArrow.png" id="4_vgqql"]
+[ext_resource type="Texture2D" uid="uid://3uh1n8rltr5b" path="res://Assets/Sprites/AimCrosshair.png" id="5_fkybt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go701"]
 size = Vector2(16, 16)
@@ -32,7 +33,13 @@ shape = SubResource("RectangleShape2D_a02cp")
 stream = ExtResource("3_6t5aa")
 bus = &"SFX"
 
-[node name="Crosshair063" type="Sprite2D" parent="." unique_id=781713143]
+[node name="AimCrosshair" type="Sprite2D" parent="." unique_id=1245197771]
+z_index = 5
+position = Vector2(50, 0)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_fkybt")
+
+[node name="DirectionArrow" type="Sprite2D" parent="." unique_id=781713143]
 position = Vector2(16, 0)
 rotation = 1.5707964
 scale = Vector2(0.3, 0.3)

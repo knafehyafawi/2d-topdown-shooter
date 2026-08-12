@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://d23yqfqe261vc" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
-[ext_resource type="PackedScene" uid="uid://dwqjjxd8sxgys" path="res://Scenes/audio_sliders.tscn" id="3_1och7"]
+[ext_resource type="PackedScene" uid="uid://dwqjjxd8sxgys" path="res://Scenes/audio_settings.tscn" id="3_1och7"]
 
 [node name="pause_menu" type="CanvasLayer" unique_id=1463994057]
 process_mode = 3

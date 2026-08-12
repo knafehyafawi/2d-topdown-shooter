@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cjo7rwnq0kpdp" path="res://Scripts/options_menu.gd" id="1_l1wg4"]
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_uj0ok"]
 [ext_resource type="Texture2D" uid="uid://cmxko1kitdcso" path="res://Assets/BGs/TitleScreenStatic.png" id="2_l1wg4"]
-[ext_resource type="PackedScene" uid="uid://dwqjjxd8sxgys" path="res://Scenes/audio_sliders.tscn" id="4_inh3s"]
+[ext_resource type="PackedScene" uid="uid://dwqjjxd8sxgys" path="res://Scenes/audio_settings.tscn" id="4_inh3s"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_inh3s"]
 texture = ExtResource("2_l1wg4")
@@ -20,54 +20,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_uj0ok")
 theme_override_styles/panel = SubResource("StyleBoxTexture_inh3s")
-
-[node name="OptionsLabel" type="Label" parent="." unique_id=1968881210]
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 72.0
-offset_bottom = 160.0
-grow_horizontal = 2
-theme = ExtResource("1_uj0ok")
-theme_override_font_sizes/font_size = 80
-text = "Options"
-horizontal_alignment = 1
-
-[node name="Options" type="MarginContainer" parent="." unique_id=1116234905]
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -130.0
-offset_bottom = 130.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_uj0ok")
-theme_override_constants/margin_left = 300
-theme_override_constants/margin_right = 300
-
-[node name="Options2" type="VBoxContainer" parent="Options" unique_id=151295803]
-layout_mode = 2
-theme_override_constants/separation = 50
-alignment = 1
-
-[node name="ControlsHelp" type="VBoxContainer" parent="Options/Options2" unique_id=1114735460]
-layout_mode = 2
-alignment = 1
-
-[node name="ControlsLabel" type="Label" parent="Options/Options2/ControlsHelp" unique_id=1259723549]
-layout_mode = 2
-theme = ExtResource("1_uj0ok")
-theme_override_font_sizes/font_size = 40
-text = "Controls:"
-horizontal_alignment = 1
-
-[node name="Controls" type="Label" parent="Options/Options2/ControlsHelp" unique_id=1513581568]
-layout_mode = 2
-text = "Move: WASD | Fire: Left click | Pause: ESC"
-horizontal_alignment = 1
-
-[node name="AudioSliders" parent="Options/Options2" unique_id=1464155867 instance=ExtResource("4_inh3s")]
-layout_mode = 2
 
 [node name="BackButton" type="Button" parent="." unique_id=1300586723]
 offset_right = 72.0
@@ -89,5 +41,75 @@ theme = ExtResource("1_uj0ok")
 theme_override_font_sizes/font_size = 20
 text = "alpha v0.2.0"
 horizontal_alignment = 2
+
+[node name="OptionsMenu" type="VBoxContainer" parent="." unique_id=864640554]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="ScreenTitle" type="Label" parent="OptionsMenu" unique_id=1968881210]
+layout_mode = 2
+theme = ExtResource("1_uj0ok")
+theme_override_font_sizes/font_size = 80
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Options" type="MarginContainer" parent="OptionsMenu" unique_id=1116234905]
+layout_mode = 2
+theme = ExtResource("1_uj0ok")
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+
+[node name="Options2" type="VBoxContainer" parent="OptionsMenu/Options" unique_id=151295803]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="ControlsHelp" type="VBoxContainer" parent="OptionsMenu/Options/Options2" unique_id=1114735460]
+layout_mode = 2
+alignment = 1
+
+[node name="ControlsLabel" type="Label" parent="OptionsMenu/Options/Options2/ControlsHelp" unique_id=1259723549]
+layout_mode = 2
+theme = ExtResource("1_uj0ok")
+theme_override_font_sizes/font_size = 40
+text = "Controls:"
+horizontal_alignment = 1
+
+[node name="Controls" type="Label" parent="OptionsMenu/Options/Options2/ControlsHelp" unique_id=1513581568]
+layout_mode = 2
+text = "Move: WASD | Fire: Left click | Pause: ESC"
+horizontal_alignment = 1
+
+[node name="HUDSettings" type="VBoxContainer" parent="OptionsMenu/Options/Options2" unique_id=1551562122]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="OptionsMenu/Options/Options2/HUDSettings" unique_id=1118082925]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "HUD Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArrowCheckButton" type="CheckButton" parent="OptionsMenu/Options/Options2/HUDSettings" unique_id=1592167654]
+layout_mode = 2
+text = "Direction Arrow"
+
+[node name="CrosshairCheckButton" type="CheckButton" parent="OptionsMenu/Options/Options2/HUDSettings" unique_id=240241973]
+layout_mode = 2
+text = "Aim Crosshair
+"
+
+[node name="ShowScoreButton" type="CheckButton" parent="OptionsMenu/Options/Options2/HUDSettings" unique_id=160600128]
+layout_mode = 2
+text = "Show Score"
+
+[node name="AudioSliders" parent="OptionsMenu/Options/Options2" unique_id=1464155867 instance=ExtResource("4_inh3s")]
+layout_mode = 2
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

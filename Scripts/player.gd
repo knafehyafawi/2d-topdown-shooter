@@ -8,11 +8,22 @@ var input_dir = Vector2()
 
 var score: int = 0
 
+func _ready() -> void:
+	$DirectionArrow.visible = SettingsManager.DirectionArrow_enabled
+	$AimCrosshair.visible = SettingsManager.AimCrosshair_enabled
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN if SettingsManager.AimCrosshair_enabled else Input.MOUSE_MODE_VISIBLE
+
+func _exit_tree() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
 func _process(_delta: float) -> void:
 	input_dir = Input.get_vector("left", "right", "up", "down")
+	$AimCrosshair.global_position = get_global_mouse_position()
 	
 	if Input.is_action_just_pressed("pause"):
 		get_tree().paused = true
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		$"../pause_menu".visible = true
 		$"../HUD".visible = false
 
@@ -37,7 +48,7 @@ func fire():
 	#print("Spawn pos: ", global_position + Vector2(20, 0).rotated(rotation))
 	#########################################################
 	
-	#var sfx_index = AudioServer.get_bus_index("SFX")ssssd
+	#var sfx_index = AudioServer.get_bus_index("SFX")
 	#print("SFX volume_db: ", AudioServer.get_bus_volume_db(sfx_index))
 	#print("SFX muted: ", AudioServer.is_bus_mute(sfx_index))
 	$ShootSound.play()

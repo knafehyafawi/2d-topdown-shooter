@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dyr5s5xrrndwh"]
+
+[ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_2ldbg"]
+[ext_resource type="Script" uid="uid://d2f1x16wjbs2r" path="res://Scripts/hud_settings.gd" id="2_msyrd"]
+
+[node name="HUDSettings" type="VBoxContainer" unique_id=1511179488]
+theme = ExtResource("1_2ldbg")
+alignment = 1
+script = ExtResource("2_msyrd")
+
+[node name="Label" type="Label" parent="." unique_id=1056742952]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "HUD Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArrowCheckButton" type="CheckButton" parent="." unique_id=1713888656]
+layout_mode = 2
+text = "Direction Arrow"
+
+[node name="CrosshairCheckButton" type="CheckButton" parent="." unique_id=908409370]
+layout_mode = 2
+text = "Aim Crosshair
+"
+
+[node name="ShowScoreButton" type="CheckButton" parent="." unique_id=1230481154]
+layout_mode = 2
+text = "Show Score"
+
+[connection signal="toggled" from="ArrowCheckButton" to="." method="_on_arrow_check_button_toggled"]
+[connection signal="toggled" from="CrosshairCheckButton" to="." method="_on_crosshair_check_button_toggled"]
+[connection signal="toggled" from="ShowScoreButton" to="." method="_on_show_score_button_toggled"]
