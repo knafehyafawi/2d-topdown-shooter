@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_uj0ok"]
 [ext_resource type="Texture2D" uid="uid://cmxko1kitdcso" path="res://Assets/BGs/TitleScreenStatic.png" id="2_l1wg4"]
 [ext_resource type="PackedScene" uid="uid://dwqjjxd8sxgys" path="res://Scenes/audio_settings.tscn" id="4_inh3s"]
+[ext_resource type="PackedScene" uid="uid://dyr5s5xrrndwh" path="res://Scenes/hud_settings.tscn" id="4_m6e8v"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_inh3s"]
 texture = ExtResource("2_l1wg4")
@@ -20,13 +21,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_uj0ok")
 theme_override_styles/panel = SubResource("StyleBoxTexture_inh3s")
-
-[node name="BackButton" type="Button" parent="." unique_id=1300586723]
-offset_right = 72.0
-offset_bottom = 52.0
-theme = ExtResource("1_uj0ok")
-theme_override_font_sizes/font_size = 40
-text = "Back"
 
 [node name="VersionLabel" type="Label" parent="." unique_id=1587685280]
 anchors_preset = 1
@@ -85,31 +79,17 @@ layout_mode = 2
 text = "Move: WASD | Fire: Left click | Pause: ESC"
 horizontal_alignment = 1
 
-[node name="HUDSettings" type="VBoxContainer" parent="OptionsMenu/Options/Options2" unique_id=1551562122]
+[node name="HUDSettings" parent="OptionsMenu/Options/Options2" unique_id=1511179488 instance=ExtResource("4_m6e8v")]
 layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="OptionsMenu/Options/Options2/HUDSettings" unique_id=1118082925]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "HUD Settings"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ArrowCheckButton" type="CheckButton" parent="OptionsMenu/Options/Options2/HUDSettings" unique_id=1592167654]
-layout_mode = 2
-text = "Direction Arrow"
-
-[node name="CrosshairCheckButton" type="CheckButton" parent="OptionsMenu/Options/Options2/HUDSettings" unique_id=240241973]
-layout_mode = 2
-text = "Aim Crosshair
-"
-
-[node name="ShowScoreButton" type="CheckButton" parent="OptionsMenu/Options/Options2/HUDSettings" unique_id=160600128]
-layout_mode = 2
-text = "Show Score"
 
 [node name="AudioSliders" parent="OptionsMenu/Options/Options2" unique_id=1464155867 instance=ExtResource("4_inh3s")]
 layout_mode = 2
+
+[node name="BackButton" type="Button" parent="." unique_id=1300586723]
+offset_right = 72.0
+offset_bottom = 52.0
+theme = ExtResource("1_uj0ok")
+theme_override_font_sizes/font_size = 40
+text = "Back"
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

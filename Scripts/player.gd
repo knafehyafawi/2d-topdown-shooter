@@ -9,9 +9,14 @@ var input_dir = Vector2()
 var score: int = 0
 
 func _ready() -> void:
+	apply_settings()
+	SettingsManager.settings_changed.connect(apply_settings)
+
+func apply_settings() -> void:
 	$DirectionArrow.visible = SettingsManager.DirectionArrow_enabled
 	$AimCrosshair.visible = SettingsManager.AimCrosshair_enabled
-	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN if SettingsManager.AimCrosshair_enabled else Input.MOUSE_MODE_VISIBLE
+	if not get_tree().paused:
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN if SettingsManager.AimCrosshair_enabled else Input.MOUSE_MODE_VISIBLE
 
 func _exit_tree() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

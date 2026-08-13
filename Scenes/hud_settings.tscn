@@ -17,15 +17,18 @@ vertical_alignment = 1
 
 [node name="ArrowCheckButton" type="CheckButton" parent="." unique_id=1713888656]
 layout_mode = 2
+button_pressed = true
 text = "Direction Arrow"
 
 [node name="CrosshairCheckButton" type="CheckButton" parent="." unique_id=908409370]
 layout_mode = 2
+button_pressed = true
 text = "Aim Crosshair
 "
 
 [node name="ShowScoreButton" type="CheckButton" parent="." unique_id=1230481154]
 layout_mode = 2
+button_pressed = true
 text = "Show Score"
 
 [connection signal="toggled" from="ArrowCheckButton" to="." method="_on_arrow_check_button_toggled"]
