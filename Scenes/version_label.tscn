@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bhv64kv11jx3b"]
+
+[ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_uap15"]
+
+[node name="VersionLabel" type="Label" unique_id=1949070108]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -102.0
+offset_top = 5.0
+offset_right = -6.0
+offset_bottom = 28.0
+grow_horizontal = 0
+theme = ExtResource("1_uap15")
+theme_override_font_sizes/font_size = 20
+text = "alpha v0.2.1"
+horizontal_alignment = 2

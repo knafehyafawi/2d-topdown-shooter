@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://brpb2x2tv67ir" path="res://Assets/Branding/Other Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_White.png" id="4_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://5infso56wvbb" path="res://Assets/Branding/Other Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_Black.png" id="5_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://dvgesclqeshi5" path="res://Assets/Branding/Other Branding/NG Branding/official_ng_logo.png" id="8_yhxw7"]
+[ext_resource type="PackedScene" uid="uid://bhv64kv11jx3b" path="res://Scenes/version_label.tscn" id="9_trj04"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yhxw7"]
 texture = ExtResource("3_cp0ys")
@@ -162,20 +163,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="VersionLabel" type="Label" parent="." unique_id=2059882436]
+[node name="VersionLabel" parent="." unique_id=321016715 instance=ExtResource("9_trj04")]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -102.0
-offset_top = 5.0
-offset_right = -6.0
-offset_bottom = 28.0
-grow_horizontal = 0
-theme = ExtResource("2_1ehe0")
-theme_override_font_sizes/font_size = 20
-text = "alpha v0.2.0"
-horizontal_alignment = 2
 
 [connection signal="pressed" from="GameButtons/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="GameButtons/OptionsAndExit/OptionsButton" to="." method="_on_options_button_pressed"]

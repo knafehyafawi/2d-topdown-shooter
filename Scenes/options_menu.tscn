@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cmxko1kitdcso" path="res://Assets/BGs/TitleScreenStatic.png" id="2_l1wg4"]
 [ext_resource type="PackedScene" uid="uid://dwqjjxd8sxgys" path="res://Scenes/audio_settings.tscn" id="4_inh3s"]
 [ext_resource type="PackedScene" uid="uid://dyr5s5xrrndwh" path="res://Scenes/hud_settings.tscn" id="4_m6e8v"]
+[ext_resource type="PackedScene" uid="uid://bhv64kv11jx3b" path="res://Scenes/version_label.tscn" id="4_tqe32"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_inh3s"]
 texture = ExtResource("2_l1wg4")
@@ -22,19 +23,7 @@ grow_vertical = 2
 theme = ExtResource("1_uj0ok")
 theme_override_styles/panel = SubResource("StyleBoxTexture_inh3s")
 
-[node name="VersionLabel" type="Label" parent="." unique_id=1587685280]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -102.0
-offset_top = 5.0
-offset_right = -6.0
-offset_bottom = 28.0
-grow_horizontal = 0
-theme = ExtResource("1_uj0ok")
-theme_override_font_sizes/font_size = 20
-text = "alpha v0.2.0"
-horizontal_alignment = 2
+[node name="VersionLabel" parent="." unique_id=321016715 instance=ExtResource("4_tqe32")]
 
 [node name="OptionsMenu" type="VBoxContainer" parent="." unique_id=864640554]
 anchors_preset = 15
@@ -76,7 +65,7 @@ horizontal_alignment = 1
 
 [node name="Controls" type="Label" parent="OptionsMenu/Options/Options2/ControlsHelp" unique_id=1513581568]
 layout_mode = 2
-text = "Move: WASD | Fire: Left click | Pause: ESC"
+text = "Move: WASD | Aim: Point mouse | Fire: Left click | Pause: ESC"
 horizontal_alignment = 1
 
 [node name="HUDSettings" parent="OptionsMenu/Options/Options2" unique_id=1511179488 instance=ExtResource("4_m6e8v")]

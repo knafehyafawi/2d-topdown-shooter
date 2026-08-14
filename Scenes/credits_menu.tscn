@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://brpb2x2tv67ir" path="res://Assets/Branding/Other Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_White.png" id="6_emf1i"]
 [ext_resource type="Texture2D" uid="uid://5infso56wvbb" path="res://Assets/Branding/Other Branding/GitHub Branding/Logos/GitHub Logos/PNG/GitHub_Invertocat_Black.png" id="7_gaibv"]
 [ext_resource type="Texture2D" uid="uid://dvgesclqeshi5" path="res://Assets/Branding/Other Branding/NG Branding/official_ng_logo.png" id="8_b7tim"]
+[ext_resource type="PackedScene" uid="uid://bhv64kv11jx3b" path="res://Scenes/version_label.tscn" id="9_emf1i"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oouge"]
 texture = ExtResource("3_xqd6p")
@@ -106,19 +107,7 @@ theme = ExtResource("1_b3rhs")
 theme_override_font_sizes/font_size = 40
 text = "Back"
 
-[node name="VersionLabel" type="Label" parent="." unique_id=1071121908]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -102.0
-offset_top = 5.0
-offset_right = -6.0
-offset_bottom = 28.0
-grow_horizontal = 0
-theme = ExtResource("1_b3rhs")
-theme_override_font_sizes/font_size = 20
-text = "alpha v0.2.0"
-horizontal_alignment = 2
+[node name="VersionLabel" parent="." unique_id=1354465975 instance=ExtResource("9_emf1i")]
 
 [connection signal="pressed" from="Links/LinksSorter/ItchioButton" to="." method="_on_itchio_button_pressed"]
 [connection signal="pressed" from="Links/LinksSorter/GitHubButton" to="." method="_on_git_hub_button_pressed"]
