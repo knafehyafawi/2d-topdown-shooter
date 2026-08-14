@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var max_health: int = 5
 var health: int
 
-@export var speed: float = 150.0
+@export var speed: float = 200.0
 var motion = Vector2()
 
 @onready var base_color: Color = $Sprite2D.modulate

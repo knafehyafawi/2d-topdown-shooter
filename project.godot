@@ -24,6 +24,10 @@ AudioManager="*uid://s4ymcb4wyyld"
 PlatformUtils="*uid://cc018qef08lgy"
 SettingsManager="*res://Scripts/settings_manager.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 up={

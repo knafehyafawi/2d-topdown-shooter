@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 200.0
+@export var speed = 250.0
 @export var bullet_speed = 1000
 var input_dir = Vector2()
 
