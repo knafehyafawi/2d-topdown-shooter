@@ -24,6 +24,11 @@ func _physics_process(_delta: float) -> void:
 	var direction = (next_pos - global_position).normalized()
 	velocity = direction * speed
 	
+	#################### debugging ##########################################################################################################################################################################################################################
+	#if Engine.get_physics_frames() % 30 == 0:
+		#print("Enemy pos: ", global_position, " | next_pos: ", next_pos, " | is_finished: ", nav_agent.is_navigation_finished(), " | is_target_reachable: ", nav_agent.is_target_reachable())
+	#################### debugging ##########################################################################################################################################################################################################################
+	
 	look_at(next_pos)
 	move_and_slide()
 
