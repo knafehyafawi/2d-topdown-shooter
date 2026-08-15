@@ -18,6 +18,11 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	var player = get_parent().get_node("Player")
+	
+	#if has_line_of_sight_to_player(player.global_position):
+		#nav_agent.target_position = player.global_position
+		## this is for tentative enemy AI adjustments
+	
 	nav_agent.target_position = player.global_position
 	
 	var next_pos = nav_agent.get_next_path_position()
@@ -31,6 +36,13 @@ func _physics_process(_delta: float) -> void:
 	
 	look_at(next_pos)
 	move_and_slide()
+
+############################# tenative func for enemy ai adjustments ##################################################
+#func has_line_of_sight_to_player(player_pos: Vector2) -> bool:
+	#var space_state = get_world_2d().direct_space_state
+	#var query = PhysicsRayQueryParameters2D.create(global_position, player_pos, 1) # layer 1 = walls
+	#var result = space_state.intersect_ray(query)
+	#return result.is_empty()
 
 func take_damage(amount: int) -> void:
 	health -= amount
