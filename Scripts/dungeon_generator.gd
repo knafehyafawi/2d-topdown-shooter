@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var tile_map_layer: TileMapLayer = $"../NavigationRegion2D/TileMapLayer"
+
 @export var grid_width: int = 100
 @export var grid_height: int = 100
 @export var extra_connection_chance: float = 0.375
@@ -7,7 +9,8 @@ extends Node2D
 @export var corridor_width: int = 8
 @export var wall_source_id: int = 0
 @export var wall_atlas_coords: Vector2i = Vector2i(0, 0)
-@onready var tile_map_layer: TileMapLayer = $TileMapLayer
+
+#@onready var tile_map_layer: TileMapLayer = $TileMapLayer # debug
 
 var visited: Array = []
 var horizontal_walls: Array = []  # walls between (x,y) and (x+1,y)
@@ -17,19 +20,26 @@ var last_tile_height: int = 0
 const TILE_PIXEL_SIZE: int = 16
 
 func _ready() -> void:
-	var start_time = Time.get_ticks_msec()
+	var loading_screen = get_tree().get_first_node_in_group("loading_screen")
+	
 	generate()
-	#print_maze()
 	paint_maze()
-	print("Generation + painting took: ", Time.get_ticks_msec() - start_time, " ms")
 	
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
+		player.global_position = get_center_spawn_point()
 		var camera = player.get_node("Camera2D")
 		camera.limit_left = 0
 		camera.limit_top = 0
 		camera.limit_right = last_tile_width * TILE_PIXEL_SIZE
 		camera.limit_bottom = last_tile_height * TILE_PIXEL_SIZE
+	
+
+	print("Loading screen found: ", loading_screen)
+	if loading_screen:
+		await get_tree().create_timer(0.75).timeout
+		loading_screen.visible = false
+		print("Set visible to false")
 
 func generate() -> void:
 	visited.clear()
@@ -179,3 +189,23 @@ func cleanup_isolated_walls(tiles: Array, tile_width: int, tile_height: int) -> 
 					open_neighbors += 1
 				if open_neighbors >= 4:
 					tiles[x][y] = 0
+
+func get_center_spawn_point() -> Vector2:
+	var tiles = get_tile_grid()
+	var center_x = last_tile_width / 2
+	var center_y = last_tile_height / 2
+	
+	if tiles[center_x][center_y] == 0:
+		return Vector2(center_x * TILE_PIXEL_SIZE + TILE_PIXEL_SIZE / 2.0, center_y * TILE_PIXEL_SIZE + TILE_PIXEL_SIZE / 2.0)
+	
+	# spiral outward from center until an open tile is found
+	for radius in range(1, max(last_tile_width, last_tile_height)):
+		for dx in range(-radius, radius + 1):
+			for dy in range(-radius, radius + 1):
+				var tx = center_x + dx
+				var ty = center_y + dy
+				if tx >= 0 and tx < last_tile_width and ty >= 0 and ty < last_tile_height:
+					if tiles[tx][ty] == 0:
+						return Vector2(tx * TILE_PIXEL_SIZE + TILE_PIXEL_SIZE / 2.0, ty * TILE_PIXEL_SIZE + TILE_PIXEL_SIZE / 2.0)
+	
+	return Vector2(TILE_PIXEL_SIZE * 2, TILE_PIXEL_SIZE * 2)  # fallback, should never actually hit this

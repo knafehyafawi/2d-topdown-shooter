@@ -11,20 +11,7 @@ var score: int = 0
 func _ready() -> void:
 	apply_settings()
 	SettingsManager.settings_changed.connect(apply_settings)
-	
-	#var generator = get_tree().get_first_node_in_group("generator")
-	#if generator:
-		#generator.generation_finished.connect(_on_generation_finished)
-#
-#func _on_generation_finished() -> void:
-	#print("Camera limits being set now")
-	#var generator = get_tree().get_first_node_in_group("generator")
-	#var arena_size = generator.get_arena_pixel_size()
-	#print("Arena size: ", arena_size)
-	#$Camera2D.limit_left = 0
-	#$Camera2D.limit_top = 0
-	#$Camera2D.limit_right = arena_size.x
-	#$Camera2D.limit_bottom = arena_size.y
+
 
 func apply_settings() -> void:
 	$DirectionArrow.visible = SettingsManager.DirectionArrow_enabled
