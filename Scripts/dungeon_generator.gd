@@ -3,7 +3,8 @@ extends Node2D
 @export var grid_width: int = 100
 @export var grid_height: int = 100
 @export var extra_connection_chance: float = 0.12
-@export var cell_size: int = 4 # tiles per cell, not counting the shared wall
+@export var cell_size: int = 16 # tiles per cell, not counting the shared wall
+@export var corridor_width: int = 8
 @export var wall_source_id: int = 0
 @export var wall_atlas_coords: Vector2i = Vector2i(0, 0)
 @onready var tile_map_layer: TileMapLayer = $TileMapLayer
@@ -11,9 +12,6 @@ extends Node2D
 var visited: Array = []
 var horizontal_walls: Array = []  # walls between (x,y) and (x+1,y)
 var vertical_walls: Array = []    # walls between (x,y) and (x,y+1)
-
-signal generation_finished
-
 var last_tile_width: int = 0
 var last_tile_height: int = 0
 const TILE_PIXEL_SIZE: int = 16
@@ -112,7 +110,7 @@ func get_tile_grid() -> Array:
 	for tx in tile_width:
 		tiles.append([])
 		for ty in tile_height:
-			tiles[tx].append(1)  # start everything as wall
+			tiles[tx].append(1)
 	
 	for cx in grid_width:
 		for cy in grid_height:
@@ -120,15 +118,23 @@ func get_tile_grid() -> Array:
 			var origin_y = cy * (cell_size + 1) + 1
 			for dx in cell_size:
 				for dy in cell_size:
-					tiles[origin_x + dx][origin_y + dy] = 0 # carve the cell's own floor
+					tiles[origin_x + dx][origin_y + dy] = 0
 			
 			if not horizontal_walls[cx][cy] and cx < grid_width - 1:
-				for dy in cell_size:
-					tiles[origin_x + cell_size][origin_y + dy] = 0
+				var mid = origin_y + int(cell_size / 2.0)
+				for w in corridor_width:
+					var offset = w - int(corridor_width / 2.0)
+					var y_pos = mid + offset
+					if y_pos >= origin_y and y_pos < origin_y + cell_size:
+						tiles[origin_x + cell_size][y_pos] = 0
 			
 			if not vertical_walls[cx][cy] and cy < grid_height - 1:
-				for dx in cell_size:
-					tiles[origin_x + dx][origin_y + cell_size] = 0
+				var mid_x = origin_x + int(cell_size / 2.0)
+				for w in corridor_width:
+					var offset = w - int(corridor_width / 2.0)
+					var x_pos = mid_x + offset
+					if x_pos >= origin_x and x_pos < origin_x + cell_size:
+						tiles[x_pos][origin_y + cell_size] = 0
 	
 	return tiles
 
