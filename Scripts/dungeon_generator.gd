@@ -2,8 +2,8 @@ extends Node2D
 
 @export var grid_width: int = 100
 @export var grid_height: int = 100
-@export var extra_connection_chance: float = 0.12
-@export var cell_size: int = 16 # tiles per cell, not counting the shared wall
+@export var extra_connection_chance: float = 0.375
+@export var cell_size: int = 8 # tiles per cell, not counting the shared wall
 @export var corridor_width: int = 8
 @export var wall_source_id: int = 0
 @export var wall_atlas_coords: Vector2i = Vector2i(0, 0)
@@ -136,6 +136,7 @@ func get_tile_grid() -> Array:
 					if x_pos >= origin_x and x_pos < origin_x + cell_size:
 						tiles[x_pos][origin_y + cell_size] = 0
 	
+	cleanup_isolated_walls(tiles, tile_width, tile_height)
 	return tiles
 
 func print_maze() -> void:
@@ -162,3 +163,19 @@ func paint_maze() -> void:
 
 func get_arena_pixel_size() -> Vector2:
 	return Vector2(last_tile_width * TILE_PIXEL_SIZE, last_tile_height * TILE_PIXEL_SIZE)
+
+func cleanup_isolated_walls(tiles: Array, tile_width: int, tile_height: int) -> void:
+	for x in range(1, tile_width - 1):
+		for y in range(1, tile_height - 1):
+			if tiles[x][y] == 1:
+				var open_neighbors = 0
+				if tiles[x-1][y] == 0:
+					open_neighbors += 1
+				if tiles[x+1][y] == 0:
+					open_neighbors += 1
+				if tiles[x][y-1] == 0:
+					open_neighbors += 1
+				if tiles[x][y+1] == 0:
+					open_neighbors += 1
+				if open_neighbors >= 4:
+					tiles[x][y] = 0
