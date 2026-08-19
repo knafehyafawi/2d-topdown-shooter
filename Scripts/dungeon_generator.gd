@@ -34,11 +34,11 @@ func _ready() -> void:
 		camera.limit_bottom = last_tile_height * TILE_PIXEL_SIZE
 	
 
-	print("Loading screen found: ", loading_screen)
+	#print("Loading screen found: ", loading_screen)
 	if loading_screen:
 		await get_tree().create_timer(0.75).timeout
 		loading_screen.visible = false
-		print("Set visible to false")
+		#print("Set visible to false")
 
 func generate() -> void:
 	visited.clear()
