@@ -69,4 +69,4 @@ common/physics_interpolation=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-environment/defaults/default_clear_color=Color(0.3580069, 0.098277666, 0.09822168, 1)
+environment/defaults/default_clear_color=Color(0.35686275, 0.09803922, 0.09803922, 1)
