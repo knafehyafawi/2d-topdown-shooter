@@ -1,12 +1,22 @@
 extends Node2D
 
-@export var grid_width: int = 20
-@export var grid_height: int = 15
+@export var grid_width: int = 100
+@export var grid_height: int = 100
 @export var extra_connection_chance: float = 0.12
+@export var cell_size: int = 4 # tiles per cell, not counting the shared wall
+@export var wall_source_id: int = 0
+@export var wall_atlas_coords: Vector2i = Vector2i(0, 0)
+@onready var tile_map_layer: TileMapLayer = $TileMapLayer
 
 var visited: Array = []
 var horizontal_walls: Array = []  # walls between (x,y) and (x+1,y)
 var vertical_walls: Array = []    # walls between (x,y) and (x,y+1)
+
+signal generation_finished
+
+var last_tile_width: int = 0
+var last_tile_height: int = 0
+const TILE_PIXEL_SIZE: int = 16
 
 func _ready() -> void:
 	var start_time = Time.get_ticks_msec()
@@ -14,6 +24,14 @@ func _ready() -> void:
 	#print_maze()
 	paint_maze()
 	print("Generation + painting took: ", Time.get_ticks_msec() - start_time, " ms")
+	
+	var player = get_tree().get_first_node_in_group("player")
+	if player:
+		var camera = player.get_node("Camera2D")
+		camera.limit_left = 0
+		camera.limit_top = 0
+		camera.limit_right = last_tile_width * TILE_PIXEL_SIZE
+		camera.limit_bottom = last_tile_height * TILE_PIXEL_SIZE
 
 func generate() -> void:
 	visited.clear()
@@ -86,8 +104,6 @@ func add_extra_connections() -> void:
 				if randf() < extra_connection_chance:
 					vertical_walls[x][y] = false
 
-@export var cell_size: int = 4 # tiles per cell, not counting the shared wall
-
 func get_tile_grid() -> Array:
 	var tile_width = grid_width * (cell_size + 1) + 1
 	var tile_height = grid_height * (cell_size + 1) + 1
@@ -116,7 +132,6 @@ func get_tile_grid() -> Array:
 	
 	return tiles
 
-
 func print_maze() -> void:
 	var tiles = get_tile_grid()
 	var tile_width = tiles.size()
@@ -129,17 +144,15 @@ func print_maze() -> void:
 		row += "]"
 		print(row)
 
-@export var wall_source_id: int = 0
-@export var wall_atlas_coords: Vector2i = Vector2i(0, 0)
-
-@onready var tile_map_layer: TileMapLayer = $TileMapLayer
-
 func paint_maze() -> void:
 	tile_map_layer.clear()
 	var tiles = get_tile_grid()
-	var tile_width = tiles.size()
-	var tile_height = tiles[0].size()
-	for x in tile_width:
-		for y in tile_height:
+	last_tile_width = tiles.size()
+	last_tile_height = tiles[0].size()
+	for x in last_tile_width:
+		for y in last_tile_height:
 			if tiles[x][y] == 1:
 				tile_map_layer.set_cell(Vector2i(x, y), wall_source_id, wall_atlas_coords)
+
+func get_arena_pixel_size() -> Vector2:
+	return Vector2(last_tile_width * TILE_PIXEL_SIZE, last_tile_height * TILE_PIXEL_SIZE)
