@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://bcrmc352662" path="res://Scripts/dungeon_generator.gd" id="1_tf5k2"]
 
-[node name="Node" type="Node" unique_id=930176312]
+[node name="test_dungeon" type="Node2D" unique_id=843212617]
 script = ExtResource("1_tf5k2")

@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 @export var grid_width: int = 20
 @export var grid_height: int = 15
@@ -10,6 +10,8 @@ var vertical_walls: Array = []    # walls between (x,y) and (x,y+1)
 
 func _ready() -> void:
 	generate()
+	var tiles = get_tile_grid()
+	print("Tile grid size: ", tiles.size(), " x ", tiles[0].size())
 	print_maze()
 
 func generate() -> void:
@@ -83,7 +85,7 @@ func add_extra_connections() -> void:
 				if randf() < extra_connection_chance:
 					vertical_walls[x][y] = false
 
-@export var cell_size: int = 1 # tiles per cell, not counting the shared wall
+@export var cell_size: int = 4 # tiles per cell, not counting the shared wall
 
 func get_tile_grid() -> Array:
 	var tile_width = grid_width * (cell_size + 1) + 1
