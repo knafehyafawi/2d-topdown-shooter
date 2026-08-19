@@ -9,10 +9,11 @@ var horizontal_walls: Array = []  # walls between (x,y) and (x+1,y)
 var vertical_walls: Array = []    # walls between (x,y) and (x,y+1)
 
 func _ready() -> void:
+	var start_time = Time.get_ticks_msec()
 	generate()
-	var tiles = get_tile_grid()
-	print("Tile grid size: ", tiles.size(), " x ", tiles[0].size())
-	print_maze()
+	#print_maze()
+	paint_maze()
+	print("Generation + painting took: ", Time.get_ticks_msec() - start_time, " ms")
 
 func generate() -> void:
 	visited.clear()
@@ -127,3 +128,18 @@ func print_maze() -> void:
 		row = row.trim_suffix(",")
 		row += "]"
 		print(row)
+
+@export var wall_source_id: int = 0
+@export var wall_atlas_coords: Vector2i = Vector2i(0, 0)
+
+@onready var tile_map_layer: TileMapLayer = $TileMapLayer
+
+func paint_maze() -> void:
+	tile_map_layer.clear()
+	var tiles = get_tile_grid()
+	var tile_width = tiles.size()
+	var tile_height = tiles[0].size()
+	for x in tile_width:
+		for y in tile_height:
+			if tiles[x][y] == 1:
+				tile_map_layer.set_cell(Vector2i(x, y), wall_source_id, wall_atlas_coords)
