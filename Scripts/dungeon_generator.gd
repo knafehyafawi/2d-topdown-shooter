@@ -10,7 +10,6 @@ extends Node2D
 @export var wall_source_id: int = 0
 @export var wall_atlas_coords: Vector2i = Vector2i(0, 0)
 
-#@onready var tile_map_layer: TileMapLayer = $TileMapLayer # debug
 
 var visited: Array = []
 var horizontal_walls: Array = []  # walls between (x,y) and (x+1,y)
@@ -192,7 +191,9 @@ func cleanup_isolated_walls(tiles: Array, tile_width: int, tile_height: int) -> 
 
 func get_center_spawn_point() -> Vector2:
 	var tiles = get_tile_grid()
+	@warning_ignore("integer_division")
 	var center_x = last_tile_width / 2
+	@warning_ignore("integer_division")
 	var center_y = last_tile_height / 2
 	
 	if tiles[center_x][center_y] == 0:
