@@ -120,7 +120,7 @@ limit_bottom = 1500
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=774622718]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=774622718 groups=["nav_region"]]
 navigation_polygon = SubResource("NavigationPolygon_5a7ea")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="NavigationRegion2D" unique_id=2035627457]
@@ -129,60 +129,6 @@ tile_set = SubResource("TileSet_fo5ed")
 
 [node name="EnemySpawner" parent="." unique_id=37880375 instance=ExtResource("4_8j60k")]
 enemy_scenes = Array[PackedScene]([ExtResource("4_5v1tr"), ExtResource("5_0fj1v"), ExtResource("6_0fj1v")])
-
-[node name="Marker2D" type="Marker2D" parent="EnemySpawner" unique_id=1763392718]
-position = Vector2(1714, 1044)
-
-[node name="Marker2D2" type="Marker2D" parent="EnemySpawner" unique_id=1852384643]
-position = Vector2(-1131, -397)
-
-[node name="Marker2D3" type="Marker2D" parent="EnemySpawner" unique_id=1826527351]
-position = Vector2(-1595, -40)
-
-[node name="Marker2D4" type="Marker2D" parent="EnemySpawner" unique_id=1124409080]
-position = Vector2(-1005, 422)
-
-[node name="Marker2D5" type="Marker2D" parent="EnemySpawner" unique_id=165201062]
-position = Vector2(-352, 471)
-
-[node name="Marker2D6" type="Marker2D" parent="EnemySpawner" unique_id=2011873675]
-position = Vector2(-836, 984)
-
-[node name="Marker2D7" type="Marker2D" parent="EnemySpawner" unique_id=647296801]
-position = Vector2(-356, 785)
-
-[node name="Marker2D8" type="Marker2D" parent="EnemySpawner" unique_id=1642138162]
-position = Vector2(1378, 1046)
-
-[node name="Marker2D9" type="Marker2D" parent="EnemySpawner" unique_id=1770585320]
-position = Vector2(1530, 884)
-
-[node name="Marker2D10" type="Marker2D" parent="EnemySpawner" unique_id=1650724892]
-position = Vector2(1211, -262)
-
-[node name="Marker2D11" type="Marker2D" parent="EnemySpawner" unique_id=1734862834]
-position = Vector2(1674, -145)
-
-[node name="Marker2D12" type="Marker2D" parent="EnemySpawner" unique_id=400409978]
-position = Vector2(825, -431)
-
-[node name="Marker2D13" type="Marker2D" parent="EnemySpawner" unique_id=1107820259]
-position = Vector2(-1060, -40)
-
-[node name="Marker2D14" type="Marker2D" parent="EnemySpawner" unique_id=1625914288]
-position = Vector2(-9, -322)
-
-[node name="Marker2D15" type="Marker2D" parent="EnemySpawner" unique_id=1554710257]
-position = Vector2(-1656, 952)
-
-[node name="Marker2D16" type="Marker2D" parent="EnemySpawner" unique_id=935041615]
-position = Vector2(936, 701)
-
-[node name="Marker2D17" type="Marker2D" parent="EnemySpawner" unique_id=1083252838]
-position = Vector2(54, 741)
-
-[node name="Marker2D18" type="Marker2D" parent="EnemySpawner" unique_id=1944697876]
-position = Vector2(898, -166)
 
 [node name="DeathMenu" parent="." unique_id=1176570567 instance=ExtResource("5_fo5ed")]
 visible = false

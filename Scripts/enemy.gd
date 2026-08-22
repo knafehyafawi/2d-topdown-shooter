@@ -19,19 +19,18 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	var player = get_parent().get_node("Player")
 	
-	#if has_line_of_sight_to_player(player.global_position):
-		#nav_agent.target_position = player.global_position
-		## this is for tentative enemy AI adjustments
-	
 	nav_agent.target_position = player.global_position
 	
 	var next_pos = nav_agent.get_next_path_position()
 	var direction = (next_pos - global_position).normalized()
 	velocity = direction * speed
 	
+	
 	#################### debugging ##########################################################################################################################################################################################################################
-	#if Engine.get_physics_frames() % 30 == 0:
-		#print("Enemy pos: ", global_position, " | next_pos: ", next_pos, " | is_finished: ", nav_agent.is_navigation_finished(), " | is_target_reachable: ", nav_agent.is_target_reachable())
+	# temporarily add to enemy.gd's _physics_process
+	if Engine.get_physics_frames() % 30 == 0:
+		print("Enemy pos: ", global_position, " | next_pos: ", nav_agent.get_next_path_position(), " | target: ", nav_agent.target_position, " | reachable: ", nav_agent.is_target_reachable())
+		print("Full path: ", nav_agent.get_current_navigation_path())
 	#################### debugging ##########################################################################################################################################################################################################################
 	
 	look_at(next_pos)
