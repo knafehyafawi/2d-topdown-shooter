@@ -45,7 +45,7 @@ func _ready() -> void:
 	var test_enemy_scene = preload("res://Scenes/enemy.tscn")
 	var test_enemy = test_enemy_scene.instantiate()
 	get_parent().add_child.call_deferred(test_enemy)
-	test_enemy.global_position = get_center_spawn_point() + Vector2(80, 0)
+	test_enemy.global_position = get_center_spawn_point() + Vector2(150, 150)
 	print("Test enemy spawned at: ", test_enemy.global_position, " | player at: ", get_center_spawn_point())
 	
 	if loading_screen:
