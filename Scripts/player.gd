@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed = 250.0
 @export var bullet_speed = 1000
 var input_dir = Vector2()
-
+var can_act: bool = false
 @onready var bullet_scene: PackedScene = preload("res://Scenes/bullet.tscn")
 
 var score: int = 0
@@ -11,7 +11,6 @@ var score: int = 0
 func _ready() -> void:
 	apply_settings()
 	SettingsManager.settings_changed.connect(apply_settings)
-
 
 func apply_settings() -> void:
 	$DirectionArrow.visible = SettingsManager.DirectionArrow_enabled
@@ -22,8 +21,9 @@ func apply_settings() -> void:
 func _exit_tree() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
-
 func _process(_delta: float) -> void:
+	if not can_act:
+		return
 	input_dir = Input.get_vector("left", "right", "up", "down")
 	$AimCrosshair.global_position = get_global_mouse_position()
 	
@@ -37,7 +37,6 @@ func _process(_delta: float) -> void:
 #func _draw():
 	#draw_circle(Vector2.ZERO, 3, Color.RED)  # mark player origin
 	#draw_circle(Vector2(20, 0), 3, Color.GREEN)  # mark spawn point in local space
-#########################################################
 
 func player_movement() -> void:
 	if input_dir:
@@ -65,12 +64,11 @@ func fire():
 	bullet_instance.position = get_global_position()
 	bullet_instance.rotation = rotation
 	bullet_instance.apply_impulse(Vector2(bullet_speed, 0).rotated(rotation))
-	
 
 func _physics_process(_delta: float) -> void:
 	player_movement()
 	move_and_slide()
-	if Input.is_action_just_pressed("fire"):
+	if Input.is_action_just_pressed("fire") and can_act:
 		fire()
 
 func kill():

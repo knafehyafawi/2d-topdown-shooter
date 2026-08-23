@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ew2jntsnhiyf" path="res://Scripts/hud.gd" id="1_fccik"]
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="2_bjfho"]
 
-[node name="HUD" type="CanvasLayer" unique_id=1772401344]
+[node name="HUD" type="CanvasLayer" unique_id=1772401344 groups=["hud"]]
 script = ExtResource("1_fccik")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=677224101]
@@ -22,3 +22,12 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Score: 0"
+
+[node name="CountdownLabel" type="Label" parent="MarginContainer" unique_id=845330461]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_bjfho")
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1

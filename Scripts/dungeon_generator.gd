@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var tile_map_layer: TileMapLayer = $"../NavigationRegion2D/TileMapLayer"
 
-@export var grid_width: int = 15 # og 100
-@export var grid_height: int = 15 # of 100
+@export var grid_width: int = 50
+@export var grid_height: int = 50
 @export var extra_connection_chance: float = 0.375
 @export var cell_size: int = 8 # tiles per cell, not counting the shared wall
 @export var corridor_width: int = 8
@@ -51,15 +51,27 @@ func _ready() -> void:
 		camera.limit_right = last_tile_width * TILE_PIXEL_SIZE
 		camera.limit_bottom = last_tile_height * TILE_PIXEL_SIZE
 	
-	var test_enemy_scene = preload("res://Scenes/enemy.tscn")
-	var test_enemy = test_enemy_scene.instantiate()
-	get_parent().add_child.call_deferred(test_enemy)
-	test_enemy.global_position = get_center_spawn_point() + Vector2(150, 150)
-	print("Test enemy spawned at: ", test_enemy.global_position, " | player at: ", get_center_spawn_point())
+	#var test_enemy_scene = preload("res://Scenes/enemy.tscn")
+	#var test_enemy = test_enemy_scene.instantiate()
+	#get_parent().add_child.call_deferred(test_enemy)
+	#test_enemy.global_position = get_center_spawn_point() + Vector2(1500, 1500)
+	##print("Test enemy spawned at: ", test_enemy.global_position, " | player at: ", get_center_spawn_point())
 	
 	if loading_screen:
 		await get_tree().create_timer(0.75).timeout
 		loading_screen.visible = false
+	
+	var hud = get_tree().get_first_node_in_group("hud")
+	if hud:
+		var countdown_label = hud.get_node("MarginContainer/CountdownLabel")
+		countdown_label.visible = true
+		for i in [3, 2, 1]:
+			countdown_label.text = str(i)
+			await get_tree().create_timer(1.0).timeout
+		countdown_label.visible = false
+	
+	if player:
+		player.can_act = true
 
 func generate() -> void:
 	visited.clear()
