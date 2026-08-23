@@ -11,6 +11,10 @@ var motion = Vector2()
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 var can_deal_damage: bool = false
 
+var last_position: Vector2 = Vector2.ZERO
+var stuck_check_timer: float = 0.0
+
+
 func _ready() -> void:
 	health = max_health
 	await get_tree().create_timer(0.2).timeout
@@ -25,12 +29,18 @@ func _physics_process(_delta: float) -> void:
 	var direction = (next_pos - global_position).normalized()
 	velocity = direction * speed
 	
+	stuck_check_timer += _delta
+	if stuck_check_timer >= 0.5:
+		if global_position.distance_to(last_position) < 10.0:
+			var nudge_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+			global_position += nudge_direction * 8.0
+		last_position = global_position
+		stuck_check_timer = 0.0
+	
 	
 	#################### debugging ##########################################################################################################################################################################################################################
-	# temporarily add to enemy.gd's _physics_process
 	if Engine.get_physics_frames() % 30 == 0:
-		print("Enemy pos: ", global_position, " | next_pos: ", nav_agent.get_next_path_position(), " | target: ", nav_agent.target_position, " | reachable: ", nav_agent.is_target_reachable())
-		print("Full path: ", nav_agent.get_current_navigation_path())
+		print("Enemy pos: ", global_position, " | stuck_check_timer: ", stuck_check_timer, " | next_pos: ", nav_agent.get_next_path_position(), " | target: ", nav_agent.target_position, " | reachable: ", nav_agent.is_target_reachable())
 	#################### debugging ##########################################################################################################################################################################################################################
 	
 	look_at(next_pos)

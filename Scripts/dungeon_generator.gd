@@ -27,11 +27,20 @@ func _ready() -> void:
 	var bake_start = Time.get_ticks_msec()
 	var nav_region = get_tree().get_first_node_in_group("nav_region")
 	if nav_region:
+		var nav_polygon = nav_region.navigation_polygon
+		nav_polygon.clear_outlines()
+		var arena_rect = PackedVector2Array([
+			Vector2(0,0),
+			Vector2(last_tile_width * TILE_PIXEL_SIZE, 0),
+			Vector2(last_tile_width * TILE_PIXEL_SIZE, last_tile_height * TILE_PIXEL_SIZE),
+			Vector2(0, last_tile_height * TILE_PIXEL_SIZE)
+		])
+		nav_polygon.add_outline(arena_rect)
+		
 		nav_region.bake_navigation_polygon()
 		await nav_region.bake_finished
 		await get_tree().physics_frame
-		print("Nav bake genuinely complete, took: ", Time.get_ticks_msec() - bake_start, " ms")
-		print("Nav region navigation_polygon exists: ", nav_region.navigation_polygon != null)
+		print("Nav bake doned doned fr fr. Took: ", Time.get_ticks_msec() - bake_start, " ms")
 	
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
