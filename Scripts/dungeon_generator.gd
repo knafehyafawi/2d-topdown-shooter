@@ -10,7 +10,6 @@ extends Node2D
 @export var wall_source_id: int = 0
 @export var wall_atlas_coords: Vector2i = Vector2i(0, 0)
 
-
 var visited: Array = []
 var horizontal_walls: Array = []  # walls between (x,y) and (x+1,y)
 var vertical_walls: Array = []    # walls between (x,y) and (x,y+1)
@@ -243,3 +242,12 @@ func get_center_spawn_point() -> Vector2:
 						return Vector2(tx * TILE_PIXEL_SIZE + TILE_PIXEL_SIZE / 2.0, ty * TILE_PIXEL_SIZE + TILE_PIXEL_SIZE / 2.0)
 	
 	return Vector2(TILE_PIXEL_SIZE * 2, TILE_PIXEL_SIZE * 2)  # fallback, should never actually hit this
+
+func get_valid_spawn_points() -> Array:
+	var points = []
+	var tiles = get_tile_grid()
+	for x in last_tile_width:
+		for y in last_tile_width:
+			if tiles[x][y] == 0:
+				points.append(Vector2(x*TILE_PIXEL_SIZE + TILE_PIXEL_SIZE / 2.0, y*TILE_PIXEL_SIZE+TILE_PIXEL_SIZE/2))
+	return points
