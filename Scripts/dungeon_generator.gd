@@ -247,7 +247,7 @@ func get_valid_spawn_points() -> Array:
 	var points = []
 	var tiles = get_tile_grid()
 	for x in last_tile_width:
-		for y in last_tile_width:
+		for y in last_tile_height:
 			if tiles[x][y] == 0:
-				points.append(Vector2(x*TILE_PIXEL_SIZE + TILE_PIXEL_SIZE / 2.0, y*TILE_PIXEL_SIZE+TILE_PIXEL_SIZE/2))
+				points.append(Vector2(x*TILE_PIXEL_SIZE + TILE_PIXEL_SIZE / 2.0, y*TILE_PIXEL_SIZE+TILE_PIXEL_SIZE/2.0))
 	return points
