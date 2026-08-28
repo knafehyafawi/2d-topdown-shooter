@@ -71,6 +71,13 @@ func _ready() -> void:
 	
 	if player:
 		player.can_act = true
+	
+	var spawner = get_tree().get_first_node_in_group("enemy_spawner")
+	print("Spawner found: ", spawner)
+	if spawner:
+		var points = get_valid_spawn_points()		
+		print("Valid spawn points found: ", points.size())
+		spawner.start_spawning(get_valid_spawn_points())
 
 func generate() -> void:
 	visited.clear()
