@@ -252,9 +252,11 @@ func get_center_spawn_point() -> Vector2:
 
 func get_valid_spawn_points() -> Array:
 	var points = []
-	var tiles = get_tile_grid()
-	for x in last_tile_width:
-		for y in last_tile_height:
-			if tiles[x][y] == 0:
-				points.append(Vector2(x*TILE_PIXEL_SIZE + TILE_PIXEL_SIZE / 2.0, y*TILE_PIXEL_SIZE+TILE_PIXEL_SIZE/2.0))
+	for cx in grid_width:
+		for cy in grid_height:
+			var origin_x = cx * (cell_size + 1) + 1
+			var origin_y = cy * (cell_size + 1) + 1
+			var center_x = origin_x + cell_size / 2.0
+			var center_y = origin_y + cell_size / 2.0
+			points.append(Vector2(center_x * TILE_PIXEL_SIZE, center_y * TILE_PIXEL_SIZE))
 	return points
