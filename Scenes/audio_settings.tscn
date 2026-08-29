@@ -35,6 +35,7 @@ ticks_on_borders = true
 ticks_position = 3
 
 [node name="Music" type="HBoxContainer" parent="." unique_id=893048256]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Music" unique_id=1604338195]
