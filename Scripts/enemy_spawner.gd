@@ -1,8 +1,11 @@
 extends Node2D
 
 @export var enemy_scenes: Array[PackedScene] = []
-@export var spawn_interval: float = 7.5
-@export var min_spawn_interval: float = 0.5
+@export var base_weights: Array[float] = [1.0, 0.0, 0.0]
+@export var late_weights: Array[float] = [0.4, 0.3, 0.3]
+@export var ramp_duration: float = 120.0
+@export var spawn_interval: float = 7.0
+@export var min_spawn_interval: float = 0.25
 @export var interval_decay_per_second: float = 0.02
 @export var enemies_per_spawn: int = 1
 @export var min_spawn_distance: float = 400.0
@@ -44,6 +47,28 @@ func is_off_screen(pos: Vector2) -> bool:
 	var screen_rect = Rect2(cam_pos - half_extents, half_extents * 2)
 	return not screen_rect.has_point(pos)
 
+func get_current_weights() -> Array[float]:
+	var t = clamp(elapsed_time/ramp_duration, 0.0, 1.0)
+	var weights: Array[float] = []
+	for i in enemy_scenes.size():
+		weights.append(lerp(base_weights[i], late_weights[i], t))
+	return weights
+
+func pick_weighted_enemy() -> PackedScene:
+	var weights = get_current_weights()
+	var total = 0.0
+	for w in weights:
+		total+= w
+	
+	var roll = randf() * total
+	var cumulative = 0.0
+	for i in weights.size():
+		cumulative += weights[i]
+		if roll <= cumulative:
+			return enemy_scenes[i]
+	
+	return enemy_scenes[enemy_scenes.size()-1]
+
 func spawn_enemy() -> void:
 	if enemy_scenes.is_empty() or spawn_points.is_empty():
 		return
@@ -59,7 +84,7 @@ func spawn_enemy() -> void:
 	if valid_points.is_empty():
 		valid_points = spawn_points
 	
-	var enemy_scene: PackedScene = enemy_scenes.pick_random()
+	var enemy_scene: PackedScene = pick_weighted_enemy()
 	var spawn_point: Vector2 = valid_points.pick_random()
 	
 	var enemy_instance = enemy_scene.instantiate()
