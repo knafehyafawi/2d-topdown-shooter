@@ -113,6 +113,7 @@ top_level = true
 position = Vector2(0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2105412374]
+process_callback = 0
 limit_left = -2000
 limit_top = -750
 limit_right = 2000
