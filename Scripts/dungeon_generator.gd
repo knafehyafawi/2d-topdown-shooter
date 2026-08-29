@@ -42,7 +42,7 @@ func _ready() -> void:
 		
 		# debug
 		print("Nav bake doned doned fr fr. Took: ", Time.get_ticks_msec() - start_time, " ms")
-		print("Nav bake result polygon exists: ", nav_region.navigation_polygon != null, " | at time: ", Time.get_ticks_msec())
+		print("Nav bake result polygon exists: ", nav_region.navigation_polygon != null, " | at time: ", Time.get_ticks_msec() - start_time, " ms")
 	
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
