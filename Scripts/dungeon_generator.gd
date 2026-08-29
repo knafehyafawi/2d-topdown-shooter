@@ -18,14 +18,13 @@ var last_tile_height: int = 0
 const TILE_PIXEL_SIZE: int = 16
 
 func _ready() -> void:
+	var start_time = Time.get_ticks_msec()
 	var loading_screen = get_tree().get_first_node_in_group("loading_screen")
 	
 	generate()
 	paint_maze()
 	
-	var bake_start = Time.get_ticks_msec()
 	var nav_region = get_tree().get_first_node_in_group("nav_region")
-	
 	if nav_region:
 		var nav_polygon = nav_region.navigation_polygon
 		nav_polygon.clear_outlines()
@@ -42,17 +41,22 @@ func _ready() -> void:
 		await get_tree().physics_frame
 		
 		# debug
-		print("Nav bake doned doned fr fr. Took: ", Time.get_ticks_msec() - bake_start, " ms")
+		print("Nav bake doned doned fr fr. Took: ", Time.get_ticks_msec() - start_time, " ms")
 		print("Nav bake result polygon exists: ", nav_region.navigation_polygon != null, " | at time: ", Time.get_ticks_msec())
 	
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
-		player.global_position = get_center_spawn_point()
 		var camera = player.get_node("Camera2D")
+		camera.position_smoothing_enabled = false
+		
+		player.global_position = get_center_spawn_point()
+		
 		camera.limit_left = 0
 		camera.limit_top = 0
 		camera.limit_right = last_tile_width * TILE_PIXEL_SIZE
 		camera.limit_bottom = last_tile_height * TILE_PIXEL_SIZE
+	
+	print("Total load time (generation → camera setup): ", Time.get_ticks_msec() - start_time, " ms")
 	
 	#var test_enemy_scene = preload("res://Scenes/enemy.tscn")
 	#var test_enemy = test_enemy_scene.instantiate()
@@ -61,7 +65,6 @@ func _ready() -> void:
 	##print("Test enemy spawned at: ", test_enemy.global_position, " | player at: ", get_center_spawn_point())
 	
 	if loading_screen:
-		await get_tree().create_timer(0.75).timeout
 		loading_screen.visible = false
 	
 	var hud = get_tree().get_first_node_in_group("hud")
@@ -75,11 +78,13 @@ func _ready() -> void:
 	
 	if player:
 		player.can_act = true
+		var camera = player.get_node("Camera2D")
+		camera.position_smoothing_enabled = true
 	
 	var spawner = get_tree().get_first_node_in_group("enemy_spawner")
 	print("Spawner found: ", spawner)
 	if spawner:
-		var points = get_valid_spawn_points()		
+		var points = get_valid_spawn_points()
 		print("Valid spawn points found: ", points.size())
 		spawner.start_spawning(get_valid_spawn_points())
 
