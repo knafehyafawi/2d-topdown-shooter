@@ -25,6 +25,7 @@ func _ready() -> void:
 	
 	var bake_start = Time.get_ticks_msec()
 	var nav_region = get_tree().get_first_node_in_group("nav_region")
+	
 	if nav_region:
 		var nav_polygon = nav_region.navigation_polygon
 		nav_polygon.clear_outlines()
@@ -39,7 +40,10 @@ func _ready() -> void:
 		nav_region.bake_navigation_polygon()
 		await nav_region.bake_finished
 		await get_tree().physics_frame
+		
+		# debug
 		print("Nav bake doned doned fr fr. Took: ", Time.get_ticks_msec() - bake_start, " ms")
+		print("Nav bake result polygon exists: ", nav_region.navigation_polygon != null, " | at time: ", Time.get_ticks_msec())
 	
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
