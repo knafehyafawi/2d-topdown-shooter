@@ -4,15 +4,20 @@ extends CharacterBody2D
 @export var bullet_speed = 1000
 
 var input_dir = Vector2()
+var score: int = 0
+var max_health: int = 1
+var health: int = 1
 var can_act: bool = false
+var can_take_damage: bool = true
 
 @onready var bullet_scene: PackedScene = preload("res://Scenes/bullet.tscn")
-
-var score: int = 0
 
 func _ready() -> void:
 	apply_settings()
 	SettingsManager.settings_changed.connect(apply_settings)
+	
+	max_health = 1 + GameManager.health_tier
+	health = max_health
 
 func apply_settings() -> void:
 	$DirectionArrow.visible = SettingsManager.DirectionArrow_enabled
@@ -73,6 +78,17 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("fire") and can_act:
 		fire()
 
+func take_damage(amount: int) -> void:
+	if not can_take_damage:
+		return
+	health -= amount
+	if health <= 0:
+		kill()
+	else:
+		can_take_damage = false
+		await get_tree().create_timer(1).timeout
+		can_take_damage = true
+
 func kill():
 	get_tree().paused = true
 	$"../HUD".hide()
@@ -84,4 +100,4 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	#print("Killed by: ", body.name, " at position: ", body.global_position, " | player at: ", global_position, " | distance: ", body.global_position.distance_to(global_position))
 	if body.is_in_group("enemies"):
 		if body.has_method("get") and body.can_deal_damage:
-			kill()
+			take_damage(1)
