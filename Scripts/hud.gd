@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var score_label: Label = $"MarginContainer/HUD Org/ScoreLabel"
+@onready var health_bar = $"MarginContainer/HUD Org/HealthBar"
 
 func _ready() -> void:
 	apply_settings()
@@ -11,3 +12,6 @@ func apply_settings() -> void:
 
 func update_score(new_score: int) -> void:
 	score_label.text = "Score: " + str(new_score)
+
+func update_health(current: int, max_hp: int) -> void:
+	health_bar.update_health(current, max_hp)

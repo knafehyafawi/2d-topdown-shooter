@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://ihe5iv1cqkep"]
+
+[ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_78m4n"]
+[ext_resource type="Script" uid="uid://df3a4nsvjmkbu" path="res://Scripts/health_bar.gd" id="2_m34ix"]
+
+[node name="HealthBar" type="Control" unique_id=1294309750]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_78m4n")
+script = ExtResource("2_m34ix")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2123664204]
+layout_mode = 0
+offset_bottom = 20.0
+
+[node name="HPLabel" type="Label" parent="HBoxContainer" unique_id=692438177]
+layout_mode = 2
+text = "HP:"
+
+[node name="Bar" type="Control" parent="HBoxContainer" unique_id=178741986]
+layout_mode = 2
+
+[node name="BGBar" type="ColorRect" parent="HBoxContainer/Bar" unique_id=1350409315]
+layout_mode = 0
+offset_right = 160.0
+offset_bottom = 20.0
+
+[node name="FillBar" type="ColorRect" parent="HBoxContainer/Bar" unique_id=2084568773]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 159.0
+offset_bottom = 19.0
+color = Color(0, 1, 0, 1)

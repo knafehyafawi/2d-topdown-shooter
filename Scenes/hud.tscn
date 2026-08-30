@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ew2jntsnhiyf" path="res://Scripts/hud.gd" id="1_fccik"]
 [ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="2_bjfho"]
+[ext_resource type="PackedScene" uid="uid://ihe5iv1cqkep" path="res://Scenes/health_bar.tscn" id="3_bjfho"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1772401344 groups=["hud"]]
 script = ExtResource("1_fccik")
@@ -28,33 +29,8 @@ vertical_alignment = 1
 [node name="HUD Org" type="VBoxContainer" parent="MarginContainer" unique_id=1039624849]
 layout_mode = 2
 
-[node name="HealthBar" type="Control" parent="MarginContainer/HUD Org" unique_id=861647530]
-custom_minimum_size = Vector2(20, 20)
+[node name="HealthBar" parent="MarginContainer/HUD Org" unique_id=1294309750 instance=ExtResource("3_bjfho")]
 layout_mode = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HUD Org/HealthBar" unique_id=78591724]
-layout_mode = 0
-offset_bottom = 20.0
-
-[node name="HPLabel" type="Label" parent="MarginContainer/HUD Org/HealthBar/HBoxContainer" unique_id=1900031392]
-layout_mode = 2
-text = "HP:"
-
-[node name="Bar" type="Control" parent="MarginContainer/HUD Org/HealthBar/HBoxContainer" unique_id=1281438524]
-layout_mode = 2
-
-[node name="BGBar" type="ColorRect" parent="MarginContainer/HUD Org/HealthBar/HBoxContainer/Bar" unique_id=576100266]
-layout_mode = 0
-offset_right = 160.0
-offset_bottom = 20.0
-
-[node name="FillBar" type="ColorRect" parent="MarginContainer/HUD Org/HealthBar/HBoxContainer/Bar" unique_id=1778924231]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 159.0
-offset_bottom = 19.0
-color = Color(0, 1, 0, 1)
 
 [node name="ScoreLabel" type="Label" parent="MarginContainer/HUD Org" unique_id=850069269]
 custom_minimum_size = Vector2(60, 20)
