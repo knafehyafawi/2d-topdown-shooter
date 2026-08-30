@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+var damage: int = 1
+
 func _ready():
 	gravity_scale = 0
 	lock_rotation = true

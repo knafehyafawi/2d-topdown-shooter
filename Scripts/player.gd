@@ -1,10 +1,14 @@
 extends CharacterBody2D
 
-@export var speed = 250.0
-@export var bullet_speed = 1000
+@export var base_speed: float = 250.0
+@export var speed_per_tier: float = 30.0
+@export var bullet_speed: float = 1000
 @export var max_health: int = 1
 @export var health: int = 1
+@export var base_damage: int = 1
+@export var damage_per_tier: int = 1
 
+var speed: float = 250
 var input_dir = Vector2()
 var score: int = 0
 var can_act: bool = false
@@ -18,7 +22,9 @@ func _ready() -> void:
 	
 	max_health = 1 + GameManager.health_tier
 	health = max_health
-	print("Player initialized. Current health before: ", health, " | max_health: ", max_health, " | can_take_damage: ", can_take_damage)
+	#print("Player initialized. Current health before: ", health, " | max_health: ", max_health, " | can_take_damage: ", can_take_damage)
+	
+	speed = base_speed + (GameManager.speed_tier * speed_per_tier)
 	
 	call_deferred("_initial_hud_update")
 
@@ -59,20 +65,24 @@ func player_movement() -> void:
 		velocity.y = move_toward(velocity.y, 0, speed)
 	
 	look_at(get_global_mouse_position())
+	
+
+
 
 func fire():
 	################ debug, do not delete ###################
 	#print("Player global pos: ", global_position)
 	#print("Spawn pos: ", global_position + Vector2(20, 0).rotated(rotation))
-	#########################################################
-	
 	#var sfx_index = AudioServer.get_bus_index("SFX")
 	#print("SFX volume_db: ", AudioServer.get_bus_volume_db(sfx_index))
 	#print("SFX muted: ", AudioServer.is_bus_mute(sfx_index))
+	#########################################################
+	
 	$ShootSound.play()
 	#print("SFX bus index at fire time: ", AudioServer.get_bus_index("SFX"))
 	
 	var bullet_instance = bullet_scene.instantiate()
+	bullet_instance.damage = base_damage + (GameManager.damage_tier * damage_per_tier)
 	get_tree().get_root().call_deferred("add_child", bullet_instance)
 	bullet_instance.position = get_global_position()
 	bullet_instance.rotation = rotation
