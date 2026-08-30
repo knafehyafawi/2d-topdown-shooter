@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 @export var speed = 250.0
 @export var bullet_speed = 1000
+
 var input_dir = Vector2()
 var can_act: bool = false
+
 @onready var bullet_scene: PackedScene = preload("res://Scenes/bullet.tscn")
 
 var score: int = 0
