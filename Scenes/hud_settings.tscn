@@ -31,6 +31,12 @@ layout_mode = 2
 button_pressed = true
 text = "Show Score"
 
+[node name="ShowHealthBarButton" type="CheckButton" parent="." unique_id=433721249]
+layout_mode = 2
+button_pressed = true
+text = "Show Health Bar"
+
 [connection signal="toggled" from="ArrowCheckButton" to="." method="_on_arrow_check_button_toggled"]
 [connection signal="toggled" from="CrosshairCheckButton" to="." method="_on_crosshair_check_button_toggled"]
 [connection signal="toggled" from="ShowScoreButton" to="." method="_on_show_score_button_toggled"]
+[connection signal="toggled" from="ShowHealthBarButton" to="." method="_on_show_health_bar_button_toggled"]

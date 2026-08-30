@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func apply_settings() -> void:
 	score_label.visible = SettingsManager.ScoreDisplay_enabled
+	health_bar.visible = SettingsManager.HealthBar_enabled
 
 func update_score(new_score: int) -> void:
 	score_label.text = "Score: " + str(new_score)

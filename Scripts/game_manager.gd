@@ -3,10 +3,10 @@ extends Node
 var currency: int = 0
 var speed_tier: int = 0
 var damage_tier: int = 0
-var health_tier: int = 5
+var health_tier: int = 0
 var has_melee_weapon: bool = false
 
-const MAX_TIER: int = 5
+const MAX_TIER: int = 4
 const MELEE_UNLOCK_COST: int = 100 #placeholder
 
 func add_currency(amount: int) -> void:
