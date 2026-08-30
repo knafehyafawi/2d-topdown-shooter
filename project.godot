@@ -23,6 +23,8 @@ buses/default_bus_layout="uid://ccalrdh1ildru"
 AudioManager="*uid://s4ymcb4wyyld"
 PlatformUtils="*uid://cc018qef08lgy"
 SettingsManager="*res://Scripts/settings_manager.gd"
+SaveManager="*uid://cbnhvacca2r52"
+GameManager="*uid://bqj1tuml7apf6"
 
 [display]
 

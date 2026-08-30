@@ -75,6 +75,7 @@ func kill():
 	get_tree().paused = true
 	$"../HUD".hide()
 	$"../DeathMenu".show_game_over(score)
+	var is_new_high_score = SaveManager.check_high_score(score)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	#################### debug!!!!!!! ####################
