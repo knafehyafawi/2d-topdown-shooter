@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var score_label: Label = $MarginContainer/ScoreLabel
+@onready var score_label: Label = $"MarginContainer/HUD Org/ScoreLabel"
 
 func _ready() -> void:
 	apply_settings()
