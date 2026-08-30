@@ -111,6 +111,8 @@ top_level = true
 
 [node name="Player" parent="." unique_id=1834170330 instance=ExtResource("1_a02cp")]
 position = Vector2(0, 1)
+max_health = 4
+health = 4
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2105412374]
 process_callback = 0

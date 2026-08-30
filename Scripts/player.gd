@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 @export var speed = 250.0
 @export var bullet_speed = 1000
+@export var max_health: int = 1
+@export var health: int = 1
 
 var input_dir = Vector2()
 var score: int = 0
-var max_health: int = 1
-var health: int = 1
 var can_act: bool = false
 var can_take_damage: bool = true
 
@@ -18,6 +18,12 @@ func _ready() -> void:
 	
 	max_health = 1 + GameManager.health_tier
 	health = max_health
+	print("Player initialized. Current health before: ", health, " | max_health: ", max_health, " | can_take_damage: ", can_take_damage)
+	
+	call_deferred("_initial_hud_update")
+
+func _initial_hud_update() -> void:
+	$"../HUD".update_health(health, max_health)
 
 func apply_settings() -> void:
 	$DirectionArrow.visible = SettingsManager.DirectionArrow_enabled
@@ -79,9 +85,13 @@ func _physics_process(_delta: float) -> void:
 		fire()
 
 func take_damage(amount: int) -> void:
+	print("take_damage called. Current health before: ", health, " | max_health: ", max_health, " | can_take_damage: ", can_take_damage)
 	if not can_take_damage:
 		return
 	health -= amount
+	print("Health after damage: ", health)
+	$"../HUD".update_health(health, max_health)
+	
 	if health <= 0:
 		kill()
 	else:

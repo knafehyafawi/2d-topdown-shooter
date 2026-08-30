@@ -26,13 +26,15 @@ theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HUD Org" type="VBoxContainer" parent="MarginContainer" unique_id=1039624849]
+[node name="HUDOrg" type="VBoxContainer" parent="MarginContainer" unique_id=1039624849]
 layout_mode = 2
 
-[node name="HealthBar" parent="MarginContainer/HUD Org" unique_id=1294309750 instance=ExtResource("3_bjfho")]
+[node name="HealthBar" parent="MarginContainer/HUDOrg" unique_id=1294309750 instance=ExtResource("3_bjfho")]
+custom_minimum_size = Vector2(20, 17)
 layout_mode = 2
+size_flags_horizontal = 1
 
-[node name="ScoreLabel" type="Label" parent="MarginContainer/HUD Org" unique_id=850069269]
+[node name="ScoreLabel" type="Label" parent="MarginContainer/HUDOrg" unique_id=850069269]
 custom_minimum_size = Vector2(60, 20)
 layout_mode = 2
 size_flags_horizontal = 0
