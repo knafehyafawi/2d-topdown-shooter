@@ -65,9 +65,6 @@ func player_movement() -> void:
 		velocity.y = move_toward(velocity.y, 0, speed)
 	
 	look_at(get_global_mouse_position())
-	
-
-
 
 func fire():
 	################ debug, do not delete ###################
