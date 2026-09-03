@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+### enemy.gd ###
+
 @export var max_health: int = 5
 var health: int
 

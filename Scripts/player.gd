@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+### player.gd ###
+
 @export var base_speed: float = 250.0
 @export var speed_per_tier: float = 30.0
 @export var bullet_speed: float = 1000

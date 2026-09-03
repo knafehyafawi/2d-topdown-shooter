@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bvn4psamqurad"]
+
+[ext_resource type="Theme" uid="uid://rtmq70pxt6is" path="res://Assets/Themes/game_theme.tres" id="1_rnmqu"]
+
+[node name="UpgradesMenu" type="CanvasLayer" unique_id=1793652933]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=762709452]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="UpgradesLabel" type="Label" parent="." unique_id=937547068]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 60.0
+offset_bottom = 214.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+localize_numeral_system = false
+theme = ExtResource("1_rnmqu")
+theme_override_font_sizes/font_size = 140
+text = "Upgrades"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=2043673154]
+anchors_preset = -1
+anchor_left = 0.47700003
+anchor_top = 0.333
+anchor_right = 0.523
+anchor_bottom = 0.36800003
+offset_left = 0.49597168
+offset_top = -0.28399658
+offset_right = -0.49597168
+offset_bottom = 0.035980225
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rnmqu")
+theme_override_font_sizes/font_size = 20
+text = "Spendable Points: "
+horizontal_alignment = 1
+vertical_alignment = 1

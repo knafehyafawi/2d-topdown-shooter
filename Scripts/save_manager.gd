@@ -1,5 +1,7 @@
 extends Node
 
+### save_manager.gd ###
+
 var high_score: int = 0
 var achievements: Dictionary = {}
 

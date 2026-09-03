@@ -1,5 +1,7 @@
 extends Node
 
+### game_manager.gd ###
+
 var currency: int = 0
 var speed_tier: int = 0
 var damage_tier: int = 0

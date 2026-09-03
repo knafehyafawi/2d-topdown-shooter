@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+### bullet.gd ###
+
 @export var damage: int = 1
 
 func _ready():
