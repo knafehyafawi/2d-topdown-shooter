@@ -12,12 +12,18 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.5882353)
 
-[node name="UpgradesLabel" type="Label" parent="." unique_id=937547068]
-anchors_preset = 10
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1333873146]
+anchors_preset = 15
 anchor_right = 1.0
-offset_top = 60.0
-offset_bottom = 214.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_rnmqu")
+alignment = 1
+
+[node name="UpgradesLabel" type="Label" parent="VBoxContainer" unique_id=937547068]
+layout_mode = 2
 size_flags_horizontal = 3
 localize_numeral_system = false
 theme = ExtResource("1_rnmqu")
@@ -26,20 +32,38 @@ text = "Upgrades"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="." unique_id=2043673154]
-anchors_preset = -1
-anchor_left = 0.47700003
-anchor_top = 0.333
-anchor_right = 0.523
-anchor_bottom = 0.36800003
-offset_left = 0.49597168
-offset_top = -0.28399658
-offset_right = -0.49597168
-offset_bottom = 0.035980225
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ScoreLabel" type="Label" parent="VBoxContainer" unique_id=2043673154]
+layout_mode = 2
 theme = ExtResource("1_rnmqu")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 40
 text = "Spendable Points: "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Upgrade1" type="HBoxContainer" parent="VBoxContainer" unique_id=994830384]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SpeedLabel" type="Label" parent="VBoxContainer/Upgrade1" unique_id=652764074]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Speed"
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Upgrade1" unique_id=1519022470]
+layout_mode = 2
+max_value = 5.0
+step = 1.0
+rounded = true
+show_percentage = false
+
+[node name="TierLabel" type="Label" parent="VBoxContainer/Upgrade1" unique_id=1897216518]
+layout_mode = 2
+text = "Tier: 0"
+
+[node name="CostLabel" type="Label" parent="VBoxContainer/Upgrade1" unique_id=900052819]
+layout_mode = 2
+text = "Cost: 0"
+
+[node name="Button" type="Button" parent="VBoxContainer/Upgrade1" unique_id=1902686835]
+layout_mode = 2
+text = "Buy"
