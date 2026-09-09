@@ -10,6 +10,8 @@ All assets and work are my own unless stated otherwise.
 
 ## TODO:
 - Upgrade system
+- Save system
+- Melee weapon
 - Music
 - Enemy types (more)
 - Better cosmetics
