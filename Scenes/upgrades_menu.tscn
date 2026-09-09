@@ -13,14 +13,18 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.5882353)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1333873146]
-anchors_preset = 15
+anchors_preset = 14
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
+offset_top = -131.0
+offset_bottom = 131.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_rnmqu")
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="UpgradesLabel" type="Label" parent="VBoxContainer" unique_id=937547068]
@@ -44,86 +48,44 @@ vertical_alignment = 1
 [node name="Upgrade1" type="HBoxContainer" parent="VBoxContainer" unique_id=994830384]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("1_rnmqu")
 theme_override_constants/separation = 10
+alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/Upgrade1" unique_id=652764074]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Speed"
+text = "Upgrade: "
 
 [node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Upgrade1" unique_id=1519022470]
 layout_mode = 2
-max_value = 5.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 4.0
 step = 1.0
 rounded = true
 show_percentage = false
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="VBoxContainer/Upgrade1" unique_id=1124988580]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_rnmqu")
+max_value = 4.0
+rounded = true
+tint_progress = Color(0, 0.8776589, 0, 1)
 
 [node name="TierLabel" type="Label" parent="VBoxContainer/Upgrade1" unique_id=1897216518]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Tier: 0"
-
-[node name="CostLabel" type="Label" parent="VBoxContainer/Upgrade1" unique_id=900052819]
-layout_mode = 2
-text = "Cost: 0"
 
 [node name="Button" type="Button" parent="VBoxContainer/Upgrade1" unique_id=1902686835]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Buy"
 
-[node name="Upgrade2" type="HBoxContainer" parent="VBoxContainer" unique_id=410443493]
+[node name="CostLabel" type="Label" parent="VBoxContainer/Upgrade1" unique_id=900052819]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 10
-
-[node name="Label" type="Label" parent="VBoxContainer/Upgrade2" unique_id=335602467]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Speed"
-
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Upgrade2" unique_id=312341812]
-layout_mode = 2
-max_value = 5.0
-step = 1.0
-rounded = true
-show_percentage = false
-
-[node name="TierLabel" type="Label" parent="VBoxContainer/Upgrade2" unique_id=1111157452]
-layout_mode = 2
-text = "Tier: 0"
-
-[node name="CostLabel" type="Label" parent="VBoxContainer/Upgrade2" unique_id=611147542]
-layout_mode = 2
+size_flags_horizontal = 3
 text = "Cost: 0"
-
-[node name="Button" type="Button" parent="VBoxContainer/Upgrade2" unique_id=1578108009]
-layout_mode = 2
-text = "Buy"
-
-[node name="Upgrade3" type="HBoxContainer" parent="VBoxContainer" unique_id=617985496]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/separation = 10
-
-[node name="Label" type="Label" parent="VBoxContainer/Upgrade3" unique_id=690397347]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Speed"
-
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/Upgrade3" unique_id=1865067007]
-layout_mode = 2
-max_value = 5.0
-step = 1.0
-rounded = true
-show_percentage = false
-
-[node name="TierLabel" type="Label" parent="VBoxContainer/Upgrade3" unique_id=1536923966]
-layout_mode = 2
-text = "Tier: 0"
-
-[node name="CostLabel" type="Label" parent="VBoxContainer/Upgrade3" unique_id=389202679]
-layout_mode = 2
-text = "Cost: 0"
-
-[node name="Button" type="Button" parent="VBoxContainer/Upgrade3" unique_id=391643940]
-layout_mode = 2
-text = "Buy"
