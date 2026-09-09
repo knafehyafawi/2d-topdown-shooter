@@ -52,180 +52,183 @@ text = "Spendable Points: "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Upgrade1" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=2062333095]
+[node name="Upgrades" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=2140569890]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_right = 100
 
-[node name="Upgrade" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Upgrade1" unique_id=994830384]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Upgrades" unique_id=1281886492]
 layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("1_rnmqu")
-theme_override_constants/separation = 10
+theme_override_constants/separation = 17
 alignment = 1
 
-[node name="UpgradeLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade1/Upgrade" unique_id=652764074]
-custom_minimum_size = Vector2(145, 45)
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Speed: "
-vertical_alignment = 1
-
-[node name="TierProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Upgrade1/Upgrade" unique_id=1519022470]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-max_value = 4.0
-step = 1.0
-rounded = true
-show_percentage = false
-
-[node name="TierLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade1/Upgrade" unique_id=1897216518]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Tier: 0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/Upgrade1/Upgrade" unique_id=1902686835]
-layout_mode = 2
-size_flags_horizontal = 3
-disabled = true
-text = "Buy"
-
-[node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade1/Upgrade" unique_id=900052819]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Cost: 0"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="Upgrade2" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=158003519]
+[node name="Upgrade1" type="MarginContainer" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer" unique_id=2062333095]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_right = 100
 
-[node name="Upgrade" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Upgrade2" unique_id=2006077711]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("1_rnmqu")
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="UpgradeLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade" unique_id=1699966560]
-custom_minimum_size = Vector2(145, 45)
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Health: "
-vertical_alignment = 1
-
-[node name="TierProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade" unique_id=8551559]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-max_value = 4.0
-step = 1.0
-rounded = true
-show_percentage = false
-
-[node name="TierLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade" unique_id=1921766262]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Tier: 0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade" unique_id=1699276880]
-layout_mode = 2
-size_flags_horizontal = 3
-disabled = true
-text = "Buy"
-
-[node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade" unique_id=728727541]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Cost: 0"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="Upgrade3" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=349471539]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_right = 100
-
-[node name="Upgrade" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Upgrade3" unique_id=1143934715]
-layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("1_rnmqu")
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="UpgradeLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade" unique_id=478880025]
-custom_minimum_size = Vector2(145, 45)
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Damage: "
-vertical_alignment = 1
-
-[node name="TierProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade" unique_id=1028580326]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-max_value = 4.0
-step = 1.0
-rounded = true
-show_percentage = false
-
-[node name="TierLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade" unique_id=928081757]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Tier: 0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade" unique_id=1821869639]
-layout_mode = 2
-size_flags_horizontal = 3
-disabled = true
-text = "Buy"
-
-[node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade" unique_id=315674892]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Cost: 0"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="MeleeUnlock" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1008306462]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_right = 100
-
-[node name="Upgrade" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MeleeUnlock" unique_id=425864515]
+[node name="Upgrade" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade1" unique_id=994830384]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_rnmqu")
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="UpgradeLabel" type="Label" parent="MarginContainer/VBoxContainer/MeleeUnlock/Upgrade" unique_id=604812603]
+[node name="UpgradeLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade1/Upgrade" unique_id=652764074]
+custom_minimum_size = Vector2(145, 45)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Speed: "
+vertical_alignment = 1
+
+[node name="TierProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade1/Upgrade" unique_id=1519022470]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 4.0
+step = 1.0
+rounded = true
+show_percentage = false
+
+[node name="TierLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade1/Upgrade" unique_id=1897216518]
+layout_mode = 2
+text = "Tier: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade1/Upgrade" unique_id=1902686835]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Buy"
+
+[node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade1/Upgrade" unique_id=900052819]
+layout_mode = 2
+text = "Cost: 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Upgrade2" type="MarginContainer" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer" unique_id=158003519]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="Upgrade" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade2" unique_id=2006077711]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_rnmqu")
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="UpgradeLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade2/Upgrade" unique_id=1699966560]
+custom_minimum_size = Vector2(145, 45)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Health: "
+vertical_alignment = 1
+
+[node name="TierProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade2/Upgrade" unique_id=8551559]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 4.0
+step = 1.0
+rounded = true
+show_percentage = false
+
+[node name="TierLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade2/Upgrade" unique_id=1921766262]
+layout_mode = 2
+text = "Tier: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade2/Upgrade" unique_id=1699276880]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Buy"
+
+[node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade2/Upgrade" unique_id=728727541]
+layout_mode = 2
+text = "Cost: 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Upgrade3" type="MarginContainer" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer" unique_id=349471539]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="Upgrade" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade3" unique_id=1143934715]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_rnmqu")
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="UpgradeLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade3/Upgrade" unique_id=478880025]
+custom_minimum_size = Vector2(145, 45)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Damage: "
+vertical_alignment = 1
+
+[node name="TierProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade3/Upgrade" unique_id=1028580326]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 4.0
+step = 1.0
+rounded = true
+show_percentage = false
+
+[node name="TierLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade3/Upgrade" unique_id=928081757]
+layout_mode = 2
+text = "Tier: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade3/Upgrade" unique_id=1821869639]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Buy"
+
+[node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/Upgrade3/Upgrade" unique_id=315674892]
+layout_mode = 2
+text = "Cost: 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MeleeUnlock" type="MarginContainer" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer" unique_id=1008306462]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="Upgrade" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/MeleeUnlock" unique_id=425864515]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_rnmqu")
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="UpgradeLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/MeleeUnlock/Upgrade" unique_id=604812603]
 custom_minimum_size = Vector2(145, 45)
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Melee Unlock:"
 vertical_alignment = 1
 
-[node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/MeleeUnlock/Upgrade" unique_id=735804484]
+[node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/MeleeUnlock/Upgrade" unique_id=735804484]
 layout_mode = 2
 size_flags_horizontal = 3
 disabled = true
 text = "Unlock Melee"
 
-[node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/MeleeUnlock/Upgrade" unique_id=603838227]
+[node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrades/VBoxContainer/MeleeUnlock/Upgrade" unique_id=603838227]
 layout_mode = 2
 text = "Cost: 0"
 horizontal_alignment = 2
@@ -235,7 +238,9 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Buttons" unique_id=981625840]
 layout_mode = 2
@@ -244,10 +249,11 @@ theme_override_constants/separation = 10
 alignment = 1
 
 [node name="SaveButton" type="Button" parent="MarginContainer/VBoxContainer/Buttons/HBoxContainer" unique_id=102377011]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "This will be implemented in a future update. Sorry!"
 theme_override_font_sizes/font_size = 40
+disabled = true
 text = "Save Game"
 
 [node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer/Buttons/HBoxContainer" unique_id=354489075]
