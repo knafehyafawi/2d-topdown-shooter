@@ -91,6 +91,7 @@ vertical_alignment = 1
 [node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/Upgrade1/Upgrade" unique_id=1902686835]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Buy"
 
 [node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade1/Upgrade" unique_id=900052819]
@@ -139,6 +140,7 @@ vertical_alignment = 1
 [node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade" unique_id=1699276880]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Buy"
 
 [node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade" unique_id=728727541]
@@ -187,6 +189,7 @@ vertical_alignment = 1
 [node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade" unique_id=1821869639]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Buy"
 
 [node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade" unique_id=315674892]
@@ -241,6 +244,7 @@ theme_override_constants/separation = 10
 alignment = 1
 
 [node name="SaveButton" type="Button" parent="MarginContainer/VBoxContainer/Buttons/HBoxContainer" unique_id=102377011]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 40
