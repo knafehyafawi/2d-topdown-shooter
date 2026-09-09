@@ -56,6 +56,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
 
 [node name="Upgrade1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Upgrade1" unique_id=994830384]
 layout_mode = 2
@@ -64,13 +65,13 @@ theme = ExtResource("1_rnmqu")
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Upgrade1/Upgrade1" unique_id=652764074]
+[node name="UpgradeLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade1/Upgrade1" unique_id=652764074]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Upgrade: "
-horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Upgrade1/Upgrade1" unique_id=1519022470]
+[node name="TierProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Upgrade1/Upgrade1" unique_id=1519022470]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -84,8 +85,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Tier: 0"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Upgrade1/Upgrade1" unique_id=1902686835]
+[node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/Upgrade1/Upgrade1" unique_id=1902686835]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Buy"
@@ -94,27 +96,29 @@ text = "Buy"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Cost: 0"
-horizontal_alignment = 1
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="Upgrade2" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1536730203]
+[node name="Upgrade2" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=1187740498]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
 
-[node name="Upgrade1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Upgrade2" unique_id=854704194]
+[node name="Upgrade1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Upgrade2" unique_id=769121364]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_rnmqu")
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade1" unique_id=372806347]
+[node name="UpgradeLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade1" unique_id=2146178886]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Upgrade: "
-horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade1" unique_id=567045356]
+[node name="TierProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade1" unique_id=2074119618]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -123,42 +127,45 @@ step = 1.0
 rounded = true
 show_percentage = false
 
-[node name="TierLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade1" unique_id=1512257482]
+[node name="TierLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade1" unique_id=1821090408]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Tier: 0"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade1" unique_id=1427818160]
+[node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade1" unique_id=1311697824]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Buy"
 
-[node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade1" unique_id=1540105272]
+[node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade2/Upgrade1" unique_id=1827896601]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Cost: 0"
-horizontal_alignment = 1
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="Upgrade3" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=662188073]
+[node name="Upgrade3" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=914931797]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
 
-[node name="Upgrade1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Upgrade3" unique_id=448393552]
+[node name="Upgrade1" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Upgrade3" unique_id=1429923195]
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("1_rnmqu")
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade1" unique_id=527471815]
+[node name="UpgradeLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade1" unique_id=1849965472]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Upgrade: "
-horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade1" unique_id=1623361537]
+[node name="TierProgressBar" type="ProgressBar" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade1" unique_id=574186646]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -167,22 +174,24 @@ step = 1.0
 rounded = true
 show_percentage = false
 
-[node name="TierLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade1" unique_id=1461220219]
+[node name="TierLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade1" unique_id=205387348]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Tier: 0"
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade1" unique_id=1966423902]
+[node name="BuyButton" type="Button" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade1" unique_id=792284937]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Buy"
 
-[node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade1" unique_id=1172396610]
+[node name="CostLabel" type="Label" parent="MarginContainer/VBoxContainer/Upgrade3/Upgrade1" unique_id=1542351249]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Cost: 0"
-horizontal_alignment = 1
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="Buttons" type="MarginContainer" parent="MarginContainer/VBoxContainer" unique_id=322048339]
 layout_mode = 2
